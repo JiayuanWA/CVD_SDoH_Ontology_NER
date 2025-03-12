@@ -1,76 +1,112 @@
 import ollama
-import json
+import nltk
+from nltk.tokenize import sent_tokenize
 
-# ✅ Load input text from a file
+nltk.download("punkt")  
+
+DEBUG = False
+
 def read_text_file(file_path):
     """Reads a text file and returns its content."""
     try:
         with open(file_path, "r", encoding="utf-8") as file:
             return file.read()
     except FileNotFoundError:
-        print(f"❌ Error: File '{file_path}' not found.")
+        print(f"Error: File '{file_path}' not found.")
         return None
 
-# ✅ Path to your SDoH text file
+def chunk_text(text, max_tokens=2048):
+    """Splits text into smaller chunks while preserving sentence structure."""
+    sentences = sent_tokenize(text)
+    chunks = []
+    current_chunk = []
+    current_length = 0
+
+    for sentence in sentences:
+        sentence_length = len(sentence.split())
+
+        if current_length + sentence_length > max_tokens:
+            chunks.append(" ".join(current_chunk))
+            current_chunk = []
+            current_length = 0
+
+        current_chunk.append(sentence)
+        current_length += sentence_length
+
+    if current_chunk:
+        chunks.append(" ".join(current_chunk))
+
+    return chunks
+
+# Path to your SDoH text file
 file_path = "sdoh_text.txt"
 text = read_text_file(file_path)
 
 if text:
-    print("\n📌 Running Llama 3 SDoH NER Extraction...\n")
+    print("\nRunning Extraction...\n")
 
-    # 🔹 Llama 3 Prompt for Structured SDoH Extraction 🔹
-    prompt = f"""
-    You are an expert in Social Determinants of Health (SDoH) and healthcare NLP.
-    
-    Given the following text, extract key SDoH-related terms and classify them into these categories:
-    - ECONOMIC (e.g., income, employment, financial strain)
-    - HOUSING (e.g., homelessness, rent issues)
-    - HEALTHCARE (e.g., insurance, medical access)
-    - EDUCATION (e.g., literacy, school access)
-    - SOCIAL (e.g., support, community, discrimination)
+    text_chunks = chunk_text(text, max_tokens=2000)
 
-    **Text:**
-    {text}
+    all_responses = [] 
 
-    Return only a structured JSON list like this:
+    for i, chunk in enumerate(text_chunks):
+        print(f"\nProcessing chunk {i + 1}/{len(text_chunks)}...\n")
 
-    [
-      {{"term": "financial instability", "category": "ECONOMIC"}},
-      {{"term": "homelessness", "category": "HOUSING"}},
-      {{"term": "lack of insurance", "category": "HEALTHCARE"}}
-    ]
-    """
 
-    # ✅ Run the model with Ollama
-    response = ollama.chat(model="llama3", messages=[{"role": "user", "content": prompt}])
+        prompt = f"""
+        You are an **extraction model**. Your task is to **systematically scan** the text and extract short phrases that match each of the 34 Social Determinants of Health (SDoH) categories. 
 
-    # ✅ Extract the response
-    generated_text = response['message']['content']
+        ### **Instructions:**
+        - **Extract at least 10-20 EXACT text or short phrases from the text.** **Do NOT paraphrase, explain, or interpret.**
+        - **Do NOT show categories that have no matching phrases.** **Only return categories that have a match.**
+        - **All extracted phrases must be directly copied from the text.** 
 
-    # ✅ Debugging: Print raw Llama 3 response
-    print("\n🛠️ **RAW MODEL RESPONSE:**\n")
-    print(generated_text)
+        ### **Categories to Scan:**
+        - Age, Origin, Ethnicity, Gender, Marital Status, Alcohol, Tobacco, Illicit Drugs, Caffeine, Stress, Psychological Concerns, Social Adversities, Nutrition, Physical Activity, Sleep, Sexual Behavior, Contraception, Treatment Adherence, Employment, Financial Strain, Food Insecurity, Housing Stability, Caregiving, Living Situation, Social Support, Safety, Transportation, Utilities, Medical Access, Insurance, Healthcare Technology, Erratic Care, Maintaining Care.  
 
-    # ✅ Extract JSON portion only
-    try:
-        response_json = generated_text.split("[", 1)[1].rsplit("]", 1)[0]  # Extract JSON content
-        response_json = "[" + response_json + "]"  # Ensure valid JSON
-        sdoh_entities = json.loads(response_json)  # Convert to Python list
-    except Exception as e:
-        print(f"⚠️ Error parsing JSON output: {e}")
-        sdoh_entities = []
+        ### **STRICT Output Format (DO NOT DEVIATE)**:
+        #  "category name ex:Age" : "exact phrase from text",
+        #  "category name" : "exact phrase from text"
+            ...
+                    
+         Now, extract from the following text:
 
-    # ✅ Print extracted SDoH entities
-    print("\n📊 **Extracted SDoH Entities:**\n")
-    print(json.dumps(sdoh_entities, indent=2))
+            {chunk}
+        """
 
-    # ✅ Save results to a file
-    output_file = "sdoh_llm_results.json"
-    if sdoh_entities:
+        try:
+
+            response = ollama.chat(
+                model="deepseek-r1",
+                messages=[{"role": "user", "content": prompt}],
+                options={"temperature": 0.0} 
+            )
+
+            if "message" in response and "content" in response["message"]:
+                generated_text = response["message"]["content"]
+            else:
+                print(f"⚠️ Unexpected response format in chunk {i + 1}: {response}")
+                continue
+
+            if DEBUG:
+                print(f"\nDEBUG - Raw Model Response (Chunk {i+1}):\n{generated_text}\n")
+
+            all_responses.append(f"Chunk {i+1}:\n{generated_text}\n")
+
+        except Exception as e:
+            print(f"⚠️ Error processing chunk {i + 1}: {e}")
+            continue
+
+    print("\ **Extracted Raw Responses Across All Chunks:**\n")
+    for response in all_responses:
+        print(response)
+
+    output_file = "sdoh_llm_raw_responses.txt"
+    if all_responses:
         with open(output_file, "w", encoding="utf-8") as out:
-            json.dump(sdoh_entities, out, indent=2)
-        print(f"\n✅ Results saved to: {output_file}")
+            out.writelines(all_responses)
+        print(f"\ Results saved to: {output_file}")
     else:
-        print("⚠️ No meaningful SDoH terms detected. File not saved.")
+        print("No meaningful responses detected. File not saved.")
 else:
-    print("⚠️ No text to process. Please check your input file.")
+    print("No text to process. Please check your input file.")

@@ -1,53 +1,93 @@
-# **LLM-Assisted NLP Pipeline for SDoH-CVD Analysis**
+# **SDoH Extraction with Ollama and NLTK**
 
-## **Project Overview**
-This project aims to develop a **Large Language Model (LLM)-assisted NLP pipeline** for **Social Determinants of Health (SDoH) annotation and Named Entity Recognition (NER) in Cardiovascular Disease (CVD)** data. The pipeline leverages **Ollama** to run models locally, ensuring efficient and customizable annotation workflows. 
+This script extracts **Social Determinants of Health (SDoH) phrases** from a given text file using **Ollama's LLM** and **NLTK** for text tokenization. The extracted phrases are saved in a structured format.
 
-## **Features**
-- **Local LLM Execution**: Uses **Ollama** to run LLMs efficiently on local machines.
-- **SDoH Annotation**: Extracts **eight key SDoH categories** from clinical text.
-- **Named Entity Recognition (NER)**: Identifies relevant entities to support structured data extraction.
-- **Flexible Prompt Engineering**: Supports zero-shot and few-shot learning for annotation experiments.
-- **Ontology Development**: Aligns extracted entities with an expanding SDoH-CVD ontology.
+## **Prerequisites**
+Before running the script, ensure you have the following installed:
 
-## **Installation**
-### **Prerequisites**
-- **Python 3.8+**
-- **Ollama** installed on your machine ([installation guide](https://ollama.com/))
-- GPU recommended for faster model inference
+### **1. Install Python**
+This script requires **Python 3.8+**. You can check your version using:
 
-### **Setup**
-1. **Install Ollama**:
-   ```bash
-   curl -fsSL https://ollama.com/install.sh | sh
-   ```
-   Or follow the [official guide](https://ollama.com/)
+```sh
+python --version
+```
 
-2. **Download the required LLM model** (e.g., LLaMA 3.3 or another supported model):
-   ```bash
-   ollama pull llama3
-   ```
+### **2. Install Required Dependencies**
+Run the following command to install the necessary Python libraries:
 
-3. **Clone the project repository**:
-   ```bash
-   .......
-   ```
+```sh
+pip install ollama nltk
+```
 
-4. **Install dependencies**:
-   ```bash
-   .......
-   ```
+### **3. Download NLTK Tokenizer**
+The script uses `nltk.tokenize.sent_tokenize`, which requires the **punkt** tokenizer. You can download it manually:
 
-## **Usage**
-### **Running the Chatbot for SDoH Annotation**
-1. **Start the Ollama server**:
-   ```bash
-   ollama serve
-   ```
-2. **Run the annotation script**:
-   ```bash
-   python annotate.py --model llama3
+```python
+import nltk
+nltk.download("punkt")
+```
+
+Alternatively, the script downloads it automatically.
+
+---
+
+## **Setup Instructions**
+
+### **Step 1: Install and Set Up Ollama**
+Ollama provides local execution for large language models.
+
+1. **Download and Install Ollama**  
+   Follow the instructions for your operating system at [Ollama’s website](https://ollama.ai).
+
+2. **Pull the Required Model**  
+   This script uses `deepseek-r1`. Download it by running:
+
+   ```sh
+   ollama pull deepseek-r1
    ```
 
-### **Running Experiments**
-Four experimental setups for **zero-shot and few-shot** learning:
+---
+
+## **How to Run the Script**
+
+### **Step 1: Prepare the Input File**
+Ensure you have a text file (`sdoh_text.txt`) in the same directory as the script. This file should contain the text from which you want to extract SDoH phrases.
+
+### **Step 2: Run the Script**
+Execute the script using:
+
+```sh
+python sdoh_extraction.py
+```
+
+---
+
+## **How the Script Works**
+1. **Reads the Input File:**  
+   - Loads `sdoh_text.txt`  
+   - If the file is missing, it throws an error.
+
+2. **Splits Text into Chunks:**  
+   - Uses `nltk.sent_tokenize` to split text into **sentence-based chunks** (max **2000 tokens per chunk**).
+
+3. **Runs the Ollama LLM Extraction Model:**  
+   - **Prompts the model** to extract SDoH phrases **directly from text** (without paraphrasing).  
+   - **Filters results** to only show categories with matching text.
+
+4. **Saves the Extracted Phrases:**  
+   - Outputs **structured results** in a file: `sdoh_llm_raw_responses.txt`.
+
+---
+
+## **Expected Output Format**
+Each extracted phrase is categorized based on SDoH attributes. The output file (`sdoh_llm_raw_responses.txt`) will contain results in the following format:
+
+```json
+{
+  "Age": "47 years old",
+  "Gender": "male",
+  "Employment": "Works as a delivery driver",
+  "Financial Strain": "Struggling to pay rent",
+  "Housing Stability": "Facing eviction"
+}
+```
