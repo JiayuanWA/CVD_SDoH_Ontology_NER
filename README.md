@@ -19,16 +19,6 @@ Run the following command to install the necessary Python libraries:
 pip install ollama nltk
 ```
 
-### **3. Download NLTK Tokenizer**
-The script uses `nltk.tokenize.sent_tokenize`, which requires the **punkt** tokenizer. You can download it manually:
-
-```python
-import nltk
-nltk.download("punkt")
-```
-
-Alternatively, the script downloads it automatically.
-
 ---
 
 ## **Setup Instructions**
