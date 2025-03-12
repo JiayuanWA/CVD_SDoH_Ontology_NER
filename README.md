@@ -1,6 +1,6 @@
 # **SDoH Extraction with Ollama and NLTK**
 
-This script extracts **Social Determinants of Health (SDoH) phrases** from a given text file using **Ollama's LLM** and **NLTK** for text tokenization. The extracted phrases are saved in a structured format.
+This script extracts Social Determinants of Health (SDoH) phrases from a given text file.
 
 ## **Prerequisites**
 Before running the script, ensure you have the following installed:
