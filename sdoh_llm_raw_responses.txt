@@ -1,11 +1,67 @@
 Chunk 1:
-``` 
-"Social Support" : "positive social support",
-"Social Support" : "negative social support",
-"Social Adversities" : "social environment",
-"Social Adversities" : "social partners",
-"Social Adversities" : "interaction frequency",
-"Living Situation" : "family and friends",
-"Psychological Concerns" : "buffer against onset",
-"Psychological Concerns" : "social indicators",
-```
+<think>
+Okay, so I need to extract phrases from this text related to the 34 Social Determinants of Health (SDoH). Let me read through the text carefully and pick out the relevant terms.
+
+First, the text talks about examining the effects of the social environment on health ailments. So "social environment" is definitely a key phrase here under the category of Social Support.
+
+Next, it mentions using data from the Health and Retirement Study. That's an organization, but maybe not directly related to SDoH categories unless they're part of the study's context.
+
+Looking at the participants' responses, they reported on their number of social partners, interaction frequency, positive, and negative social support with family and friends. So "positive social support" and "negative social support" are both relevant under Social Support.
+
+The variables used to predict health conditions include seven specific ones: high blood pressure, heart condition, lung disease, cancer, stroke, diabetes, and arthritis. These should each be their own categories under Health Conditions or perhaps under the broader category of Health Outcomes.
+
+In the results section, it mentions that social environment variables related to friendships were more significant than family indicators. So "social environment variables" is another phrase under Social Environment.
+
+The conclusion emphasizes how our social lives influence health and the nuanced role of the social environment in predicting chronic conditions. This ties back to Social Environment again.
+
+I should make sure I'm not missing any other categories. Let me check each category one by one:
+
+1. Age: Not mentioned.
+2. Origin: No mention.
+3. Ethnicity: None here.
+4. Gender: Not discussed.
+5. Marital Status: Not present.
+6. Alcohol, Tobacco, Illicit Drugs: No info on substance use.
+7. Caffeine: Nothing about coffee or tea.
+8. Stress: The text doesn't talk about stress levels directly.
+9. Psychological Concerns: No mention of mental health issues.
+10. Social Adversities: Not discussed here.
+11. Nutrition: No data on diet or nutrition.
+12. Physical Activity: No info on exercise or activity levels.
+13. Sleep: Nothing about rest or sleep patterns.
+14. Sexual Behavior, Contraception: No details on reproductive health.
+15. Treatment Adherence: Not covered here.
+16. Employment: No information on job status or employment issues.
+17. Financial Strain: The text doesn't talk about economic stressors.
+18. Food Insecurity: No mention of food access.
+19. Housing Stability: Nothing about home stability or living conditions.
+20. Caregiving: Not addressed here.
+21. Living Situation: No details on where people live.
+22. Social Support: Covered under positive and negative support.
+23. Safety: The text doesn't discuss safety issues.
+24. Transportation: No info on commuting or transport.
+25. Utilities: Nothing about energy or utility costs.
+26. Medical Access: Not mentioned here.
+27. Insurance: No details on healthcare insurance.
+28. Healthcare Technology: Not covered in the text.
+29. Erratic Care: The study doesn't mention inconsistent care.
+30. Maintaining Care: No info on ongoing medical management.
+
+So, from this analysis, only Social Environment and Social Support categories have matching phrases. I should extract those along with the specific health conditions mentioned as they fall under Health Outcomes but are part of SDoH since they relate to health status influenced by social factors.
+</think>
+
+#  "category name" : "exact phrase from text"
+            # Social Environment
+            "social environment": "The present research examined the effects of the social environment on the onset of specific health ailments."
+            "social environment variables": "These variables were used to predict onset of seven conditions in 2010: high blood pressure, heart condition, lung disease, cancer, stroke, diabetes and arthritis."
+            # Social Support
+            "positive social support": "participants' responses to social environment questions in 2006 as predictors of onset of different health conditions over the next four years."
+            "negative social support": "These variables were used to predict onset of seven conditions in 2010: high blood pressure, heart condition, lung disease, cancer, stroke, diabetes and arthritis."
+            # Health Outcomes
+            "high blood pressure": "These variables were used to predict onset of seven conditions in 2010: high blood pressure, heart condition, lung disease, cancer, stroke, diabetes and arthritis."
+            "heart condition": "These variables were used to predict onset of seven conditions in 2010: high blood pressure, heart condition, lung disease, cancer, stroke, diabetes and arthritis."
+            "lung disease": "These variables were used to predict onset of seven conditions in 2010: high blood pressure, heart condition, lung disease, cancer, stroke, diabetes and arthritis."
+            "cancer": "These variables were used to predict onset of seven conditions in 2010: high blood pressure, heart condition, lung disease, cancer, stroke, diabetes and arthritis."
+            "stroke": "These variables were used to predict onset of seven conditions in 2010: high blood pressure, heart condition, lung disease, cancer, stroke, diabetes and arthritis."
+            "diabetes": "These variables were used to predict onset of seven conditions in 2010: high blood pressure, heart condition, lung disease, cancer, stroke, diabetes and arthritis."
+            "arthritis": "These variables were used to predict onset of seven conditions in 2010: high blood pressure, heart condition, lung disease, cancer, stroke, diabetes and arthritis."

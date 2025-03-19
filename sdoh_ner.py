@@ -85,7 +85,7 @@ if text:
             if "message" in response and "content" in response["message"]:
                 generated_text = response["message"]["content"]
             else:
-                print(f"⚠️ Unexpected response format in chunk {i + 1}: {response}")
+                print(f"Unexpected response format in chunk {i + 1}: {response}")
                 continue
 
             if DEBUG:
@@ -94,7 +94,7 @@ if text:
             all_responses.append(f"Chunk {i+1}:\n{generated_text}\n")
 
         except Exception as e:
-            print(f"⚠️ Error processing chunk {i + 1}: {e}")
+            print(f"Error processing chunk {i + 1}: {e}")
             continue
 
     print("\ **Extracted Raw Responses Across All Chunks:**\n")
