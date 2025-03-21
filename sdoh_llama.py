@@ -54,10 +54,10 @@ if text:
 
 
         prompt = f"""
-        You are an **extraction model**. Your task is to **systematically scan** the text and extract short phrases that match each of the 34 Social Determinants of Health (SDoH) categories. 
+        You are an extraction model. Your task is to systematically scan the text and extract short phrases that match each of the 34 Social Determinants of Health (SDoH) categories. 
 
         ### **Instructions:**
-        - **Extract at least 10-20 EXACT text or short phrases from the text.** **Do NOT paraphrase, explain, or interpret.**
+        - **Extract text or short phrases from the text.** **Do NOT paraphrase, explain, or interpret.**
         - **Do NOT show categories that have no matching phrases.** **Only return categories that have a match.**
         - **All extracted phrases must be directly copied from the text.** 
 
@@ -69,9 +69,9 @@ if text:
         #  "category name" : "exact phrase from text"
             ...
                     
-         Now, extract from the following text:
+        Now, extract from the following text:
 
-            {chunk}
+        {chunk}
         """
 
         try:
