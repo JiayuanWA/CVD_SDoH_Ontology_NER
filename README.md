@@ -6,7 +6,7 @@ This script extracts Social Determinants of Health (SDoH) phrases from a given t
 Before running the script, ensure you have the following installed:
 
 ### **1. Install Python**
-This script requires **Python 3.8+**. You can check your version using:
+This script requires Python 3.8+. Check version :
 
 ```sh
 python --version
@@ -30,11 +30,21 @@ Ollama provides local execution for large language models.
    Follow the instructions for your operating system at [Ollama’s website](https://ollama.ai).
 
 2. **Pull the Required Model**  
-   This script uses `deepseek-r1`. Download it by running:
+2. **Pull the Required Model**  
+   This script supports multiple models. You can use either `deepseek-r1` or `llama3`. Pull the desired model using:
 
    ```sh
    ollama pull deepseek-r1
    ```
+
+   or
+
+   ```sh
+   ollama pull llama3
+   ```
+
+
+
 
 ---
 
@@ -44,10 +54,22 @@ Ollama provides local execution for large language models.
 Ensure you have a text file (`sdoh_text.txt`) in the same directory as the script. This file should contain the text from which you want to extract SDoH phrases.
 
 ### **Step 2: Run the Script**
-Execute the script using:
+Execute the script with the desired model using:
 
 ```sh
-python sdoh_extraction.py
+python sdoh_ner.py
+```
+
+or
+
+```sh
+python sdoh_llama.py
+```
+
+Alternatively, for OpenAI API-based extraction, use:
+
+```sh
+python sdoh_GPT.py
 ```
 
 ---
