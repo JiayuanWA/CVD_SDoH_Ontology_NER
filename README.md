@@ -30,7 +30,6 @@ Ollama provides local execution for large language models.
    Follow the instructions for your operating system at [Ollama’s website](https://ollama.ai).
 
 2. **Pull the Required Model**  
-2. **Pull the Required Model**  
    This script supports multiple models. You can use either `deepseek-r1` or `llama3`. Pull the desired model using:
 
    ```sh
