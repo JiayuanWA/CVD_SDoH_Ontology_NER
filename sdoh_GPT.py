@@ -1,10 +1,17 @@
-import ollama
+import openai
 import nltk
 from nltk.tokenize import sent_tokenize
 
+# Download NLTK data
 nltk.download("punkt")  
 
 DEBUG = False
+
+API_KEY = "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"
+
+
+# Initialize the OpenAI client (New API Format)
+client = openai.OpenAI(api_key=API_KEY)
 
 def read_text_file(file_path):
     """Reads a text file and returns its content."""
@@ -38,6 +45,20 @@ def chunk_text(text, max_tokens=2048):
 
     return chunks
 
+def chat_with_gpt(prompt, model="gpt-4o-mini"):
+    """Sends a prompt to OpenAI's GPT model and returns the response."""
+    try:
+        response = client.chat.completions.create(
+            model=model,
+            messages=[{"role": "user", "content": prompt}],
+            temperature=0.0
+        )
+        return response.choices[0].message.content
+    except Exception as e:
+        print(f"Error in OpenAI API call: {e}")
+        return None
+
+# Path to your SDoH text file
 file_path = "sdoh_text.txt"
 text = read_text_file(file_path)
 
@@ -50,7 +71,6 @@ if text:
 
     for i, chunk in enumerate(text_chunks):
         print(f"\nProcessing chunk {i + 1}/{len(text_chunks)}...\n")
-
 
         prompt = f"""
         You are an extraction model. Your task is to **systematically scan** the text and extract short phrases that match each of the 34 Social Determinants of Health (SDoH) categories. 
@@ -68,35 +88,22 @@ if text:
         #  "category name" : "exact phrase from text"
             ...
                     
-         Now, extract from the following text:
+        Now, extract from the following text:
 
-            {chunk}
+        {chunk}
         """
 
-        try:
+        generated_text = chat_with_gpt(prompt)
 
-            response = ollama.chat(
-                model="deepseek-r1",
-                messages=[{"role": "user", "content": prompt}],
-                options={"temperature": 0.0} 
-            )
-
-            if "message" in response and "content" in response["message"]:
-                generated_text = response["message"]["content"]
-            else:
-                print(f"Unexpected response format in chunk {i + 1}: {response}")
-                continue
-
+        if generated_text:
             if DEBUG:
                 print(f"\nDEBUG - Raw Model Response (Chunk {i+1}):\n{generated_text}\n")
 
             all_responses.append(f"Chunk {i+1}:\n{generated_text}\n")
+        else:
+            print(f"No response for chunk {i + 1}")
 
-        except Exception as e:
-            print(f"Error processing chunk {i + 1}: {e}")
-            continue
-
-    print("Extracted Raw Responses Across All Chunks:")
+    print("\n**Extracted Raw Responses Across All Chunks:**\n")
     for response in all_responses:
         print(response)
 
@@ -104,7 +111,7 @@ if text:
     if all_responses:
         with open(output_file, "w", encoding="utf-8") as out:
             out.writelines(all_responses)
-        print(f"Results saved to: {output_file}")
+        print(f"\nResults saved to: {output_file}")
     else:
         print("No meaningful responses detected. File not saved.")
 else:
