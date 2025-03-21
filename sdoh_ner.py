@@ -38,7 +38,6 @@ def chunk_text(text, max_tokens=2048):
 
     return chunks
 
-# Path to your SDoH text file
 file_path = "sdoh_text.txt"
 text = read_text_file(file_path)
 
@@ -54,7 +53,7 @@ if text:
 
 
         prompt = f"""
-        You are an **extraction model**. Your task is to **systematically scan** the text and extract short phrases that match each of the 34 Social Determinants of Health (SDoH) categories. 
+        You are an extraction model. Your task is to **systematically scan** the text and extract short phrases that match each of the 34 Social Determinants of Health (SDoH) categories. 
 
         ### **Instructions:**
         - **Extract at least 10-20 EXACT text or short phrases from the text.** **Do NOT paraphrase, explain, or interpret.**
@@ -97,7 +96,7 @@ if text:
             print(f"Error processing chunk {i + 1}: {e}")
             continue
 
-    print("\ **Extracted Raw Responses Across All Chunks:**\n")
+    print("Extracted Raw Responses Across All Chunks:")
     for response in all_responses:
         print(response)
 
@@ -105,7 +104,7 @@ if text:
     if all_responses:
         with open(output_file, "w", encoding="utf-8") as out:
             out.writelines(all_responses)
-        print(f"\ Results saved to: {output_file}")
+        print(f"Results saved to: {output_file}")
     else:
         print("No meaningful responses detected. File not saved.")
 else:
