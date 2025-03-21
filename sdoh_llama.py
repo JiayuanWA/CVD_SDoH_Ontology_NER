@@ -77,7 +77,7 @@ if text:
         try:
 
             response = ollama.chat(
-                model="deepseek-r1",
+                model="llama3",
                 messages=[{"role": "user", "content": prompt}],
                 options={"temperature": 0.0} 
             )
