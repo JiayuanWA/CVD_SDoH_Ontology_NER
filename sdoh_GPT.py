@@ -1,33 +1,21 @@
 import openai
 import nltk
+import re
+import os
+import xml.etree.ElementTree as ET
 from nltk.tokenize import sent_tokenize
 
 # Download NLTK data
-nltk.download("punkt")  
+nltk.download("punkt")
 
 DEBUG = False
 
 API_KEY = "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"
-
 client = openai.OpenAI(api_key=API_KEY)
 
 file_path = "sdoh_text.txt"
 output_file = "sdoh_extracted.xml"
-
-# Define category-to-tag mapping
-CATEGORY_TO_XML_TAG = {
-    "Age": "Demographics", "Origin": "Demographics", "Ethnicity": "Demographics", "Gender": "Demographics",
-    "Marital Status": "Demographics", "Alcohol": "Substance_Use", "Tobacco": "Substance_Use",
-    "Illicit Drugs": "Substance_Use", "Caffeine": "Substance_Use", "Stress": "Psychosocial",
-    "Psychological Concerns": "Psychosocial", "Social Adversities": "Social_Adversity", "Nutrition": "Health_Behaviors",
-    "Physical Activity": "Health_Behaviors", "Sleep": "Health_Behaviors", "Sexual Behavior": "Health_Behaviors",
-    "Contraception": "Health_Behaviors", "Treatment Adherence": "Health_Behaviors", "Employment": "Economic_Status",
-    "Financial Strain": "Economic_Status", "Food Insecurity": "Food_Security", "Housing Stability": "Housing",
-    "Caregiving": "Caregiving", "Living Situation": "Housing", "Social Support": "Social_Connections",
-    "Safety": "Safety_and_Environment", "Transportation": "Access", "Utilities": "Access",
-    "Medical Access": "Access", "Insurance": "Insurance", "Healthcare Technology": "Healthcare_Tech",
-    "Erratic Care": "Erratic_Care", "Maintaining Care": "Maintaining_Care"
-}
+examples_folder = "examples_xml"
 
 def read_text_file(file_path):
     try:
@@ -67,7 +55,7 @@ def chat_with_gpt(prompt, model="gpt-4o-mini"):
         return None
 
 def parse_response(raw_text):
-    pattern = r'^(.*?):\s*"(.*?)",\s*Start:\s*(\d+),\s*End:\s*(\d+)'
+    pattern = r'^(.*?):\s*\"(.*?)\",\s*Start:\s*(\d+),\s*End:\s*(\d+)'
     results = []
     for line in raw_text.splitlines():
         match = re.match(pattern, line.strip())
@@ -82,28 +70,41 @@ def parse_response(raw_text):
     return results
 
 def generate_xml(text, extractions):
-    root = ET.Element("CVD_SDOH")
-    text_element = ET.SubElement(root, "TEXT")
-    text_element.text = f"<![CDATA[{text}]]>"
-
-    tags = ET.SubElement(root, "TAGS")
     id_counter = {}
-
+    tag_lines = []
     for item in extractions:
-        tag_type = CATEGORY_TO_XML_TAG.get(item["category"], "Other")
-        base_id = tag_type[:2]
-        tag_id_num = id_counter.get(tag_type, 0)
-        tag_id = f"{base_id}{tag_id_num}"
-        id_counter[tag_type] = tag_id_num + 1
+        tag_type = item["category"].strip().replace(" ", "_")
+        base_id = "".join([word[0] for word in tag_type.split("_")])
+        count = id_counter.get(tag_type, 0)
+        tag_id = f"{base_id}{count}"
+        id_counter[tag_type] = count + 1
+        tag_line = f'<{tag_type} spans="{item["start"]}~{item["end"]}" text="{item["phrase"]}" id="{tag_id}" comment=""/>'
+        tag_lines.append(tag_line)
+    xml_content = '<?xml version="1.0" encoding="UTF-8" ?>\n'
+    xml_content += "<CVD_SDOH>\n"
+    xml_content += "<TEXT><![CDATA[\n" + text + "\n]]></TEXT>\n"
+    xml_content += "<TAGS>\n" + "\n".join(tag_lines) + "\n</TAGS>\n"
+    xml_content += "<META/>\n</CVD_SDOH>"
+    return xml_content
 
-        tag = ET.SubElement(tags, tag_type)
-        tag.set("spans", f"{item['start']}~{item['end']}")
-        tag.set("text", item["phrase"])
-        tag.set("id", tag_id)
-        tag.set("comment", "")
-
-    ET.SubElement(root, "META")
-    return ET.tostring(root, encoding="utf-8", method="xml").decode("utf-8")
+def load_few_shot_examples(folder_path, max_examples=2):
+    examples = []
+    files = [f for f in os.listdir(folder_path) if f.endswith(".xml")][:max_examples]
+    for file in files:
+        tree = ET.parse(os.path.join(folder_path, file))
+        root = tree.getroot()
+        text = root.find("TEXT").text or ""
+        tags = root.find("TAGS")
+        formatted_tags = []
+        for tag in tags:
+            category = tag.tag.replace("_", " ")
+            phrase = tag.attrib["text"]
+            span = tag.attrib["spans"]
+            start, end = span.split("~")
+            formatted_tags.append(f'{category}: "{phrase}", Start: {start}, End: {end}')
+        example = f"""### Example Input:\n{text.strip()}\n\n### Example Output:\n{chr(10).join(formatted_tags)}\n"""
+        examples.append(example)
+    return "\n".join(examples)
 
 # Main Pipeline
 text = read_text_file(file_path)
@@ -111,21 +112,27 @@ text = read_text_file(file_path)
 if text:
     text_chunks = chunk_text(text, max_tokens=2000)
     all_extractions = []
+    few_shot_prompt = load_few_shot_examples(examples_folder)
 
     for i, chunk in enumerate(text_chunks):
         print(f"Processing chunk {i + 1}/{len(text_chunks)}...")
+        prompt = few_shot_prompt + f"""
+You are a high-accuracy extraction model for Social Determinants of Health (SDoH). Your task is to scan the input text and extract all exact phrases that match any of the 34 SDoH categories listed below.
 
-        prompt = f"""
-You are an extraction model. Your task is to extract phrases related to 34 SDoH categories.
+### Guidelines:
+- ONLY extract phrases that match one of the 34 categories exactly as written in the list below.
+- All extracted phrases must be copied exactly from the input text.
+- Return the character start and end position of each extracted phrase.
+- If a category appears more than once, return all matches.
+- Do NOT paraphrase or interpret. Use exact quotes.
+- Extract **every single matching phrase** for each category, even if it appears redundant, repeated, or minor.
+- Ignore references, citations, metadata, author affiliations, and publication info (e.g., journal titles, DOIs, PMID, author lists).
 
-### Instructions:
-- For each category match, return:
-  - The exact phrase (copied from the text),
-  - The character **start index**,
-  - The character **end index**.
-- Return nothing for categories with no match.
-- Format:
-  Category: "Extracted phrase", Start: start_index, End: end_index
+### Categories:
+Age, Origin, Ethnicity, Gender, Marital Status, Alcohol, Tobacco, Illicit Drugs, Caffeine, Stress, Psychological Concerns, Social Adversities, Nutrition, Physical Activity, Sleep, Sexual Behavior, Contraception, Treatment Adherence, Employment, Financial Strain, Food Insecurity, Housing Stability, Caregiving, Living Situation, Social Support, Safety, Transportation, Utilities, Medical Access, Insurance, Healthcare Technology, Erratic Care, Maintaining Care, Outcome
+
+### Output Format:
+CategoryName: "Exact phrase from text", Start: starting_index, End: ending_index
 
 Now extract from this text:
 {chunk}
@@ -133,11 +140,10 @@ Now extract from this text:
         result = chat_with_gpt(prompt)
         if result:
             if DEBUG:
-                print(result)
+                print(f"\n--- GPT Output ---\n{result}\n")
             extracted = parse_response(result)
             all_extractions.extend(extracted)
 
-    # Final output
     xml_output = generate_xml(text, all_extractions)
     with open(output_file, "w", encoding="utf-8") as f:
         f.write(xml_output)

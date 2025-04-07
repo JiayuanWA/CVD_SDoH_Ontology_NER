@@ -1,3 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CVD_SDOH>
+<TEXT><![CDATA[
 617. Psychol Health. 2014;29(7):753-67. doi: 10.1080/08870446.2014.884221. Epub 2014  Feb 17.
 
 Connecting social environment variables to the onset of major specific health  outcomes.
@@ -9,3 +12,21 @@ Author information: (1)a Department of Psychology , Carleton University , Ottawa
 OBJECTIVE: The present research examined the effects of the social environment  on the onset of specific health ailments. DESIGN: Using data from the Health and Retirement Study, we examined  participants' responses to social environment questions in 2006 as predictors of  onset of different health conditions over the next four years. MAIN OUTCOME MEASURES: Healthy participants (n = 7514) reported on their number  of social partners, interaction frequency, positive social support and negative  social support with respect to both their family and friends. These variables  were used to predict onset of seven conditions in 2010: high blood pressure,  heart condition, lung disease, cancer, stroke, diabetes and arthritis. RESULTS: Logistic regressions indicated that the social environment provided  some predictive value for onset of most health outcomes, with more positive and  less negative social support appearing to buffer against onset. Social  environmental variables related to friendships appeared to play a greater role  than the family indicators. However, no variable proved universally adaptive,  and social indicators had little value in predicting onset of chronic  conditions. CONCLUSION: The current findings point to the potential for the social  environment to influence later health, while demonstrating the nuanced role that  our social lives play with respect to health.
 
 DOI: 10.1080/08870446.2014.884221 PMID: 24438045 [Indexed for MEDLINE]
+]]></TEXT>
+<TAGS>
+<Origin spans="103~109" text="Canada" id="O0" comment=""/>
+<Social_Support spans="408~429" text="positive social support" id="SS0" comment=""/>
+<Social_Support spans="434~455" text="negative social support" id="SS1" comment=""/>
+<Outcome spans="570~588" text="high blood pressure" id="O0" comment=""/>
+<Outcome spans="590~605" text="heart condition" id="O1" comment=""/>
+<Outcome spans="607~620" text="lung disease" id="O2" comment=""/>
+<Outcome spans="622~628" text="cancer" id="O3" comment=""/>
+<Outcome spans="630~635" text="stroke" id="O4" comment=""/>
+<Outcome spans="637~645" text="diabetes" id="O5" comment=""/>
+<Outcome spans="647~655" text="arthritis" id="O6" comment=""/>
+<Social_Support spans="724~738" text="social support" id="SS2" comment=""/>
+<Social_Support spans="792~810" text="social environment" id="SS3" comment=""/>
+<Social_Support spans="1030~1048" text="social environment" id="SS4" comment=""/>
+</TAGS>
+<META/>
+</CVD_SDOH>
