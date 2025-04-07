@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CVD_SDOH_updated>
+<TEXT><![CDATA[583. J Epidemiol Community Health. 2015 Dec;69(12):1199-207. doi:  10.1136/jech-2015-205728. Epub 2015 Jul 1.
+
+Spatial social polarisation: using the Index of Concentration at the Extremes  jointly for income and race/ethnicity to analyse risk of hypertension.
+
+Feldman JM(1), Waterman PD(1), Coull BA(2), Krieger N(1).
+
+Author information: (1)Department of Social and Behavioral Sciences, Harvard T.H. Chan School of  Public Health, Boston, Massachusetts, USA. (2)Department of Environmental Health, Department of Biostatistics, Harvard T.H.  Chan School of Public Health, Boston, Massachusetts, USA.
+
+BACKGROUND: Growing spatial social and economic polarisation may be an important  societal determinant of health, but only a few studies have used the recently  developed Index of Concentration at the Extremes (ICE) to analyse the impact of  joint concentrations of privilege and privation on health outcomes. We explore  use of the ICE to investigate risk of hypertension in an urban,  multiracial/ethnic, and predominantly working-class study population of US  adults. METHODS: We generated novel ICE measures at the census tract level that jointly  assess extreme concentrations of both income and racial/ethnic composition. We  then linked the ICE measures to data from two observational, cross-sectional  studies conducted in the Boston metropolitan area (2003-2004; 2008-2010;  N=2145). RESULTS: The ICE measure for extreme concentrations of white compared with black  residents was independently associated with lower odds of hypertension (OR=0.76;  95% CI 0.62 to 0.93), controlling for race/ethnicity, age, gender, smoking, body  mass index, household income, education and self-reported exposure to racial  discrimination. Even stronger associations were observed for the ICE measures  that compared concentrations of high-income white residents versus low-income  residents of colour (OR=0.61; 95% CI 0.40 to 0.96) and high-income white versus  low-income black residents (OR=0.48; 95% CI 0.29 to 0.81). CONCLUSIONS: Results suggest public health studies should explore the joint  impact of racial/ethnic and economic spatial polarisation on population health.
+
+Published by the BMJ Publishing Group Limited. For permission to use (where not  already granted under a licence) please go to  http://www.bmj.com/company/products-services/rights-and-licensing/
+
+DOI: 10.1136/jech-2015-205728 PMCID: PMC4878399 PMID: 26136082 [Indexed for MEDLINE]
+
+Conflict of interest statement: Competing interests None declared.]]></TEXT>
+<TAGS>
+<Financial_Resource spans="202~208" text="income" id="F0" comment=""/>
+<Ethnicity_Race spans="213~227" text="race/ethnicity" id="Et0" comment=""/>
+<Origin spans="982~987" text="urban" id="O0" comment=""/>
+<Ethnicity_Race spans="990~1008" text="multiracial/ethnic" id="Et1" comment=""/>
+<Employment spans="1028~1041" text="working-class" id="E0" comment=""/>
+<Financial_Resource spans="1193~1199" text="income" id="F1" comment=""/>
+<Ethnicity_Race spans="1204~1217" text="racial/ethnic" id="Et2" comment=""/>
+<Origin spans="1345~1362" text="metropolitan area" id="O1" comment=""/>
+<Ethnicity_Race spans="1471~1476" text="black" id="Et3" comment=""/>
+<Ethnicity_Race spans="1598~1612" text="race/ethnicity" id="Et4" comment=""/>
+<Age spans="1614~1617" text="age" id="Ag0" comment=""/>
+<Gender spans="1619~1625" text="gender" id="G0" comment=""/>
+<Tobacco_Use spans="1627~1634" text="smoking" id="T0" comment=""/>
+<Financial_Resource spans="1654~1670" text="household income" id="F2" comment=""/>
+<Education spans="1672~1681" text="education" id="Ed0" comment=""/>
+<Social_Adversity spans="1686~1734" text="self-reported exposure to racial  discrimination" id="So0" comment=""/>
+<Financial_Resource spans="1831~1842" text="high-income" id="F3" comment=""/>
+<Ethnicity_Race spans="1843~1848" text="white" id="Et5" comment=""/>
+<Financial_Resource spans="1866~1876" text="low-income" id="F4" comment=""/>
+<Ethnicity_Race spans="1891~1897" text="colour" id="Et6" comment=""/>
+<Financial_Resource spans="1933~1944" text="high-income" id="F5" comment=""/>
+<Ethnicity_Race spans="1945~1950" text="white" id="Et7" comment=""/>
+<Financial_Resource spans="1959~1969" text="low-income" id="F6" comment=""/>
+<Ethnicity_Race spans="1970~1975" text="black" id="Et8" comment=""/>
+<Ethnicity_Race spans="2105~2118" text="racial/ethnic" id="Et9" comment=""/>
+</TAGS>
+<META/>
+</CVD_SDOH_updated>
