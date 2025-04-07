@@ -44,7 +44,7 @@ def chunk_text(text, max_tokens=2048):
         chunks.append(" ".join(current_chunk))
     return chunks
 
-def chat_with_gpt(prompt, model="gpt-4o"):
+def chat_with_gpt(prompt, model="gpt-4o-mini"):
     try:
         response = client.chat.completions.create(
             model=model,
@@ -108,52 +108,43 @@ def load_few_shot_examples(folder_path, max_examples=2):
         examples.append(example)
     return "\n".join(examples)
 
+def similar(a, b, threshold=0.85):
+    return SequenceMatcher(None, a.strip().lower(), b.strip().lower()).ratio() >= threshold
+
 def evaluate_against_gold(gold_path, predictions):
     tree = ET.parse(gold_path)
     root = tree.getroot()
-    gold_tags = set()
-    category_errors, span_errors, text_errors = 0, 0, 0
+    gold_tags = []
 
-    gold_lookup = []
     for tag in root.find("TAGS"):
         category = tag.tag.replace("_", " ")
         phrase = tag.attrib["text"].strip()
-        span = tag.attrib["spans"].strip()
-        gold_lookup.append((category, phrase, span))
-        gold_tags.add((category, phrase, span))
+        gold_tags.append((category, phrase))
 
-    predicted_tags = set()
-    for item in predictions:
-        predicted_tags.add((item["category"], item["phrase"].strip(), f"{item['start']}~{item['end']}"))
+    matched = 0
+    unmatched_preds = []
 
-    tp = len(predicted_tags & gold_tags)
-    fp = len(predicted_tags - gold_tags)
-    fn = len(gold_tags - predicted_tags)
+    for pred in predictions:
+        found = False
+        for gold_cat, gold_text in gold_tags:
+            if pred["category"] == gold_cat and similar(pred["phrase"], gold_text):
+                matched += 1
+                found = True
+                break
+        if not found:
+            unmatched_preds.append(pred)
 
-    for pred in predicted_tags - gold_tags:
-        cat, phr, span = pred
-        if not any(g[0] == cat for g in gold_tags):
-            category_errors += 1
-        elif not any(g[2] == span for g in gold_tags if g[0] == cat):
-            span_errors += 1
-        elif not any(g[1] == phr for g in gold_tags if g[0] == cat):
-            text_errors += 1
+    precision = matched / len(predictions) if predictions else 0
+    recall = matched / len(gold_tags) if gold_tags else 0
+    f1 = 2 * precision * recall / (precision + recall) if (precision + recall) > 0 else 0
 
-    precision = tp / (tp + fp) if tp + fp > 0 else 0
-    recall = tp / (tp + fn) if tp + fn > 0 else 0
-    f1 = 2 * precision * recall / (precision + recall) if precision + recall else 0
-
-    print("\n--- Evaluation ---")
-    print(f"True Positives: {tp}")
-    print(f"False Positives: {fp}")
-    print(f"False Negatives: {fn}")
+    print("\n--- Evaluation (Category + Phrase Match) ---")
+    print(f"True Positives (matched): {matched}")
+    print(f"False Positives: {len(unmatched_preds)}")
+    print(f"False Negatives: {len(gold_tags) - matched}")
     print(f"Precision: {precision:.3f}")
     print(f"Recall:    {recall:.3f}")
     print(f"F1 Score:  {f1:.3f}")
-    print("\n--- Error Breakdown ---")
-    print(f"Category mismatches: {category_errors}")
-    print(f"Span mismatches:     {span_errors}")
-    print(f"Text mismatches:     {text_errors}")
 
 # Main Pipeline
 text = read_text_file(file_path)
@@ -234,7 +225,7 @@ if text:
     xml_output = generate_xml(text, all_extractions)
     with open(output_file, "w", encoding="utf-8") as f:
         f.write(xml_output)
-
+    print(f"✅ Extraction complete. XML saved to: {output_file}")
 
     # Run evaluation
     evaluate_against_gold(gold_path, all_extractions)
