@@ -14,19 +14,28 @@ OBJECTIVE: The present research examined the effects of the social environment  
 DOI: 10.1080/08870446.2014.884221 PMID: 24438045 [Indexed for MEDLINE]
 ]]></TEXT>
 <TAGS>
+<Outcome spans="469~487" text="high blood pressure" id="O0" comment=""/>
+<Outcome spans="489~504" text="heart condition" id="O1" comment=""/>
+<Outcome spans="506~518" text="lung disease" id="O2" comment=""/>
+<Outcome spans="520~526" text="cancer" id="O3" comment=""/>
+<Outcome spans="528~533" text="stroke" id="O4" comment=""/>
+<Outcome spans="535~542" text="diabetes" id="O5" comment=""/>
+<Outcome spans="544~552" text="arthritis" id="O6" comment=""/>
+<Social_Connections spans="394~416" text="positive social support" id="SC0" comment=""/>
+<Social_Connections spans="418~469" text="negative social support with respect to both their family and friends" id="SC1" comment=""/>
 <Origin spans="103~109" text="Canada" id="O0" comment=""/>
-<Social_Support spans="408~429" text="positive social support" id="SS0" comment=""/>
-<Social_Support spans="434~455" text="negative social support" id="SS1" comment=""/>
-<Outcome spans="570~588" text="high blood pressure" id="O0" comment=""/>
-<Outcome spans="590~605" text="heart condition" id="O1" comment=""/>
-<Outcome spans="607~620" text="lung disease" id="O2" comment=""/>
-<Outcome spans="622~628" text="cancer" id="O3" comment=""/>
-<Outcome spans="630~635" text="stroke" id="O4" comment=""/>
-<Outcome spans="637~645" text="diabetes" id="O5" comment=""/>
-<Outcome spans="647~655" text="arthritis" id="O6" comment=""/>
-<Social_Support spans="724~738" text="social support" id="SS2" comment=""/>
-<Social_Support spans="792~810" text="social environment" id="SS3" comment=""/>
-<Social_Support spans="1030~1048" text="social environment" id="SS4" comment=""/>
+<Gender spans="204~214" text="participants" id="G0" comment=""/>
+<Age spans="267~290" text="over the next four years" id="A0" comment=""/>
+<Outcome spans="157~179" text="specific health ailments" id="O7" comment=""/>
+<Outcome spans="215~248" text="onset of different health conditions" id="O8" comment=""/>
+<Outcome spans="487~514" text="onset of most health outcomes" id="O9" comment=""/>
+<Outcome spans="570~586" text="chronic conditions" id="O10" comment=""/>
+<Social_Connections spans="370~385" text="social partners" id="SC2" comment=""/>
+<Social_Connections spans="387~406" text="interaction frequency" id="SC3" comment=""/>
+<Outcome spans="646~651" text="health" id="O11" comment=""/>
+<Outcome spans="688~693" text="health" id="O12" comment=""/>
+<Outcome spans="726~731" text="health" id="O13" comment=""/>
+<Outcome spans="764~769" text="health" id="O14" comment=""/>
 </TAGS>
 <META/>
 </CVD_SDOH>
