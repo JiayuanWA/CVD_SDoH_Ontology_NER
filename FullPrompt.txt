@@ -1,0 +1,57 @@
+ prompt = few_shot_prompt + f"""
+You are a high-accuracy extraction model for Social Determinants of Health (SDoH). Your task is to scan the input text and extract all exact phrases that match any of the 34 SDoH categories listed below.
+
+### Guidelines:
+- Go category by category.
+- For each category, extract **complete and self-contained phrases** from the text — not just isolated words. For example, extract "negative social support with respect to both their family and friends" instead of just "social support".
+- The extracted phrase must include **as much surrounding detail as needed to stand alone** and be useful for annotation or labeling.
+- Phrases should capture the **full expression of the concept** as written in the original sentence.
+- ONLY extract phrases that match one of the 34 categories exactly as written in the list below.
+- All extracted phrases must be copied exactly from the input text.
+- Return the character start and end position of each extracted phrase.
+- If a category appears more than once, return all matches.
+- Do NOT paraphrase or interpret. Use exact quotes.
+- Extract at least 20 phrases.
+- Extract **every single matching phrase** for each category, even if it appears redundant, repeated, or minor.
+- Ignore references, citations, metadata, author affiliations, and publication info (e.g., journal titles, DOIs, PMID, author lists).
+
+### Categories:
+            - **Age**: Mentions of specific ages, age ranges, or life stages (e.g., child, adolescent, elderly).
+            - **Origin**: Mentions of nationality, country of origin, or geographic location.
+            - **Ethnicity/Race**: Mentions of racial or ethnic identity (e.g., Black, Hispanic).
+            - **Gender**: Mentions of male, female, or gender identity terms.
+            - **Marital Status**: Mentions of relationship status (e.g., married, divorced, widowed).
+            - **Alcohol Use**: Mentions of alcohol consumption, frequency, and effects.
+            - **Tobacco Use**: Mentions of cigarettes, cigars, vaping, or smokeless tobacco.
+            - **Illicit Drug Use**: Mentions of illegal drug use, including marijuana and prescription drug abuse.
+            - **Caffeine Use**: Mentions of coffee, tea, energy drinks, or caffeine-related effects.
+            - **Stress**: Mentions of psychological or emotional stress (e.g., work, family, financial stress).
+            - **Psychological Concern**: Mentions of mental health issues (e.g., anxiety, depression, loneliness).
+            - **Social Adversity**: Mentions of abuse, discrimination, or adverse social experiences.
+            - **Nutrition and Diet**: Mentions of dietary habits, food preferences, and nutrition.
+            - **Physical Activity**: Mentions of exercise, activity levels, or inactivity.
+            - **Sleep**: Mentions of sleep patterns, quality, or disorders.
+            - **Sexual Activities**: Mentions of sexual behavior, history, or safe sex practices.
+            - **Use of Contraception**: Mentions of birth control or contraceptive methods.
+            - **Treatment Adherence**: Mentions of medication adherence, missed doses, or compliance.
+            - **Medical Access**: Mentions of difficulty in accessing medical care, including barriers.
+            - **Dental Access**: Mentions of access to dental care and oral health.
+            - **Insurance Coverage**: Mentions of health insurance, coverage, or lack of coverage.
+            - **Healthcare Technology Access**: Mentions of telehealth, medical apps, or patient portals.
+            - **Erratic Healthcare**: Mentions of irregular medical care, missed appointments, or delays.
+            - **Maintaining Care**: Mentions of regular check-ups, specialist visits, or long-term care.
+            - **Employment**: Mentions of jobs, professions, work conditions, or unemployment.
+            - **Financial Strain**: Mentions of financial struggles, poverty, or inability to pay bills.
+            - **Food Insecurity**: Mentions of hunger, limited food access, or nutritional deprivation.
+            - **Housing Stability**: Mentions of homelessness, frequent moves, or housing issues.
+            - **Caregiver Support**: Mentions of caregiving support from family, friends, or professionals.
+            - **Living Situation**: Mentions of with whom or where the person lives.
+            - **Social Connections**: Mentions of emotional or physical support from family, friends, or others.
+            - **Safety & Environmental Exposure**: Mentions of unsafe environments, toxins, or hazardous conditions.
+            - **Transportation Needs**: Mentions of transportation access, barriers, or challenges.
+            - **Utilities**: Mentions of access to electricity, water, internet, or related issues.
+            - **Outcome**: Mentions of specific **health conditions, diagnoses, or results** related to individual or population health.  
+### Output Format:
+CategoryName: "Exact phrase from text", Start: starting_index, End: ending_index
+
+Now extract from this text:
