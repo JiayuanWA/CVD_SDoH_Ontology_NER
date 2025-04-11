@@ -14,27 +14,11 @@ OBJECTIVE: The present research examined the effects of the social environment  
 DOI: 10.1080/08870446.2014.884221 PMID: 24438045 [Indexed for MEDLINE]
 ]]></TEXT>
 <TAGS>
-<Outcome spans="469~487" text="high blood pressure" id="O0" comment=""/>
-<Outcome spans="489~504" text="heart condition" id="O1" comment=""/>
-<Outcome spans="506~518" text="lung disease" id="O2" comment=""/>
-<Outcome spans="520~526" text="cancer" id="O3" comment=""/>
-<Outcome spans="528~534" text="stroke" id="O4" comment=""/>
-<Outcome spans="536~543" text="diabetes" id="O5" comment=""/>
-<Outcome spans="545~553" text="arthritis" id="O6" comment=""/>
-<Social_Connections spans="392~414" text="positive social support" id="SC0" comment=""/>
-<Social_Connections spans="416~466" text="negative social support with respect to both their family and friends" id="SC1" comment=""/>
-<Social_Connections spans="373~388" text="social partners" id="SC2" comment=""/>
-<Social_Connections spans="390~408" text="interaction frequency" id="SC3" comment=""/>
-<Age spans="164~210" text="participants' responses to social environment questions in 2006" id="A0" comment=""/>
-<Origin spans="80~98" text="Ottawa, ON, Canada" id="O0" comment=""/>
-<Outcome spans="134~156" text="specific health ailments" id="O7" comment=""/>
-<Outcome spans="211~243" text="onset of different health conditions" id="O8" comment=""/>
-<Outcome spans="244~275" text="onset of seven conditions in 2010" id="O9" comment=""/>
-<Outcome spans="487~515" text="onset of most health outcomes" id="O10" comment=""/>
-<Outcome spans="570~586" text="chronic conditions" id="O11" comment=""/>
-<Social_Connections spans="164~192" text="social environment variables" id="SC4" comment=""/>
-<Outcome spans="156~170" text="health outcomes" id="O12" comment=""/>
-<Outcome spans="164~180" text="social environment" id="O13" comment=""/>
+<**Psychol_Health** spans="617~618" text="Psychol Health" id="*H0" comment=""/>
+<**Social_Environment** spans="635~649" text="participants' responses to social environment questions in 2006 as predictors of onset of different health conditions over the next four years." id="*E0" comment=""/>
+<**Positive_Social_Support** spans="641~647" text="positive social support and negative social support with respect to both their family and friends." id="*SS0" comment=""/>
+<**Negative_Social_Support** spans="642~643" text="negative social support" id="*SS0" comment=""/>
+<**Social_Environment_Variables** spans="658~679" text="these variables were used to predict onset of seven conditions in 2010: high blood pressure, heart condition, lung disease, cancer, stroke, diabetes and arthritis." id="*EV0" comment=""/>
 </TAGS>
 <META/>
 </CVD_SDOH>
