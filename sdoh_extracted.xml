@@ -18,24 +18,23 @@ DOI: 10.1080/08870446.2014.884221 PMID: 24438045 [Indexed for MEDLINE]
 <Outcome spans="489~504" text="heart condition" id="O1" comment=""/>
 <Outcome spans="506~518" text="lung disease" id="O2" comment=""/>
 <Outcome spans="520~526" text="cancer" id="O3" comment=""/>
-<Outcome spans="528~533" text="stroke" id="O4" comment=""/>
-<Outcome spans="535~542" text="diabetes" id="O5" comment=""/>
-<Outcome spans="544~552" text="arthritis" id="O6" comment=""/>
-<Social_Connections spans="394~416" text="positive social support" id="SC0" comment=""/>
-<Social_Connections spans="418~469" text="negative social support with respect to both their family and friends" id="SC1" comment=""/>
-<Origin spans="103~109" text="Canada" id="O0" comment=""/>
-<Gender spans="204~214" text="participants" id="G0" comment=""/>
-<Age spans="267~290" text="over the next four years" id="A0" comment=""/>
-<Outcome spans="157~179" text="specific health ailments" id="O7" comment=""/>
-<Outcome spans="215~248" text="onset of different health conditions" id="O8" comment=""/>
-<Outcome spans="487~514" text="onset of most health outcomes" id="O9" comment=""/>
-<Outcome spans="570~586" text="chronic conditions" id="O10" comment=""/>
-<Social_Connections spans="370~385" text="social partners" id="SC2" comment=""/>
-<Social_Connections spans="387~406" text="interaction frequency" id="SC3" comment=""/>
-<Outcome spans="646~651" text="health" id="O11" comment=""/>
-<Outcome spans="688~693" text="health" id="O12" comment=""/>
-<Outcome spans="726~731" text="health" id="O13" comment=""/>
-<Outcome spans="764~769" text="health" id="O14" comment=""/>
+<Outcome spans="528~534" text="stroke" id="O4" comment=""/>
+<Outcome spans="536~543" text="diabetes" id="O5" comment=""/>
+<Outcome spans="545~553" text="arthritis" id="O6" comment=""/>
+<Social_Connections spans="392~414" text="positive social support" id="SC0" comment=""/>
+<Social_Connections spans="416~466" text="negative social support with respect to both their family and friends" id="SC1" comment=""/>
+<Social_Connections spans="373~388" text="social partners" id="SC2" comment=""/>
+<Social_Connections spans="390~408" text="interaction frequency" id="SC3" comment=""/>
+<Age spans="164~210" text="participants' responses to social environment questions in 2006" id="A0" comment=""/>
+<Origin spans="80~98" text="Ottawa, ON, Canada" id="O0" comment=""/>
+<Outcome spans="134~156" text="specific health ailments" id="O7" comment=""/>
+<Outcome spans="211~243" text="onset of different health conditions" id="O8" comment=""/>
+<Outcome spans="244~275" text="onset of seven conditions in 2010" id="O9" comment=""/>
+<Outcome spans="487~515" text="onset of most health outcomes" id="O10" comment=""/>
+<Outcome spans="570~586" text="chronic conditions" id="O11" comment=""/>
+<Social_Connections spans="164~192" text="social environment variables" id="SC4" comment=""/>
+<Outcome spans="156~170" text="health outcomes" id="O12" comment=""/>
+<Outcome spans="164~180" text="social environment" id="O13" comment=""/>
 </TAGS>
 <META/>
 </CVD_SDOH>

@@ -5,6 +5,7 @@ import os
 import xml.etree.ElementTree as ET
 from nltk.tokenize import sent_tokenize
 from difflib import SequenceMatcher
+from collections import defaultdict
 
 # Download NLTK data
 nltk.download("punkt")
@@ -110,6 +111,121 @@ def load_few_shot_examples(folder_path, max_examples=2):
 
 def similar(a, b, threshold=0.85):
     return SequenceMatcher(None, a.strip().lower(), b.strip().lower()).ratio() >= threshold
+
+import xml.etree.ElementTree as ET
+from difflib import SequenceMatcher
+from collections import defaultdict
+
+def text_similar(a, b, threshold=0.85):
+    return SequenceMatcher(None, a.strip().lower(), b.strip().lower()).ratio() >= threshold
+
+def iou(span1, span2):
+    start1, end1 = span1
+    start2, end2 = span2
+    inter = max(0, min(end1, end2) - max(start1, start2))
+    union = max(end1, end2) - min(start1, start2)
+    return inter / union if union > 0 else 0
+
+def evaluate_text_category_then_span(gold_path, predictions, text_threshold=0.85, span_threshold=0.5):
+    tree = ET.parse(gold_path)
+    root = tree.getroot()
+
+    gold_tags = []
+    for tag in root.find("TAGS"):
+        category = tag.tag.replace("_", " ")
+        phrase = tag.attrib["text"].strip()
+        span = tag.attrib["spans"]
+        start, end = map(int, span.split("~"))
+        gold_tags.append({
+            "category": category,
+            "phrase": phrase,
+            "start": start,
+            "end": end
+        })
+
+    matched_exact = 0
+    matched_wrong_span = 0
+    matched_wrong_type = 0
+    false_positives = []
+    matched_ids = set()
+    type_counts = defaultdict(lambda: {"TP": 0, "FP": 0, "FN": 0})
+
+    for pred in predictions:
+        pred_span = (pred["start"], pred["end"])
+        pred_cat = pred["category"]
+        pred_text = pred["phrase"]
+        matched = False
+
+        for i, gold in enumerate(gold_tags):
+            if i in matched_ids:
+                continue
+            gold_span = (gold["start"], gold["end"])
+            gold_cat = gold["category"]
+            gold_text = gold["phrase"]
+
+            if text_similar(pred_text, gold_text, threshold=text_threshold):
+                matched_ids.add(i)
+                matched = True
+                if pred_cat == gold_cat:
+                    matched_exact += 1
+                    type_counts[pred_cat]["TP"] += 1
+                    if iou(pred_span, gold_span) < span_threshold:
+                        matched_wrong_span += 1
+                else:
+                    matched_wrong_type += 1
+                    type_counts[pred_cat]["FP"] += 1
+                    type_counts[gold_cat]["FN"] += 1
+                break
+
+        if not matched:
+            false_positives.append(pred)
+            type_counts[pred_cat]["FP"] += 1
+
+    false_negatives = [gold for i, gold in enumerate(gold_tags) if i not in matched_ids]
+    for fn in false_negatives:
+        type_counts[fn["category"]]["FN"] += 1
+
+    precision = matched_exact / len(predictions) if predictions else 0
+    recall = matched_exact / len(gold_tags) if gold_tags else 0
+    f1 = 2 * precision * recall / (precision + recall) if (precision + recall) > 0 else 0
+
+    print("\n--- Evaluation (Text + Category Match → Span Check) ---")
+    print(f"True Positives (text + type):               {matched_exact}")
+    print(f"True Positives with Span Off:              {matched_wrong_span}")
+    print(f"Text Match but Wrong Category:             {matched_wrong_type}")
+    print(f"False Positives (no text match):           {len(false_positives)}")
+    print(f"False Negatives (gold not matched):        {len(false_negatives)}")
+    print(f"Precision:                                 {precision:.3f}")
+    print(f"Recall:                                    {recall:.3f}")
+    print(f"F1 Score:                                  {f1:.3f}")
+
+    print("\n--- Per-Class Breakdown ---")
+    for tag, counts in type_counts.items():
+        tp, fp, fn = counts["TP"], counts["FP"], counts["FN"]
+        prec = tp / (tp + fp) if (tp + fp) > 0 else 0
+        rec = tp / (tp + fn) if (tp + fn) > 0 else 0
+        f1c = 2 * prec * rec / (prec + rec) if (prec + rec) > 0 else 0
+        print(f"{tag:25} | P: {prec:.2f}  R: {rec:.2f}  F1: {f1c:.2f}  (TP: {tp}, FP: {fp}, FN: {fn})")
+
+    return {
+        "TP_exact": matched_exact,
+        "TP_span_off": matched_wrong_span,
+        "TP_wrong_type": matched_wrong_type,
+        "FP": false_positives,
+        "FN": false_negatives,
+        "type_counts": dict(type_counts)
+    }
+
+def print_error_table(fp_list, fn_list):
+    print("\n--- Errors ---")
+    print("\nFalse Positives (Predicted but not in Gold):")
+    for pred in fp_list:
+        print(f"{pred['category']}: \"{pred['phrase']}\" [{pred['start']}~{pred['end']}]")
+
+    print("\nFalse Negatives (Gold but not Predicted):")
+    for gold in fn_list:
+        print(f"{gold['category']}: \"{gold['phrase']}\" [{gold['start']}~{gold['end']}]")
+
 
 def evaluate_against_gold(gold_path, predictions):
     tree = ET.parse(gold_path)
@@ -228,6 +344,8 @@ if text:
     print(f"✅ Extraction complete. XML saved to: {output_file}")
 
     # Run evaluation
-    evaluate_against_gold(gold_path, all_extractions)
+    results = evaluate_text_category_then_span(gold_path, all_extractions, text_threshold=0.85, span_threshold=0.5)
+    print_error_table(results["FP"], results["FN"])
+
 else:
     print("No text to process.")
