@@ -14,11 +14,26 @@ OBJECTIVE: The present research examined the effects of the social environment  
 DOI: 10.1080/08870446.2014.884221 PMID: 24438045 [Indexed for MEDLINE]
 ]]></TEXT>
 <TAGS>
-<**Psychol_Health** spans="617~618" text="Psychol Health" id="*H0" comment=""/>
-<**Social_Environment** spans="635~649" text="participants' responses to social environment questions in 2006 as predictors of onset of different health conditions over the next four years." id="*E0" comment=""/>
-<**Positive_Social_Support** spans="641~647" text="positive social support and negative social support with respect to both their family and friends." id="*SS0" comment=""/>
-<**Negative_Social_Support** spans="642~643" text="negative social support" id="*SS0" comment=""/>
-<**Social_Environment_Variables** spans="658~679" text="these variables were used to predict onset of seven conditions in 2010: high blood pressure, heart condition, lung disease, cancer, stroke, diabetes and arthritis." id="*EV0" comment=""/>
+<Outcome spans="408~426" text="high blood pressure" id="O0" comment=""/>
+<Outcome spans="428~443" text="heart condition" id="O1" comment=""/>
+<Outcome spans="445~457" text="lung disease" id="O2" comment=""/>
+<Outcome spans="459~465" text="cancer" id="O3" comment=""/>
+<Outcome spans="467~473" text="stroke" id="O4" comment=""/>
+<Outcome spans="475~482" text="diabetes" id="O5" comment=""/>
+<Outcome spans="484~492" text="arthritis" id="O6" comment=""/>
+<Social_Connections spans="319~341" text="positive social support" id="SC0" comment=""/>
+<Social_Connections spans="343~396" text="negative social support with respect to both their family and friends" id="SC1" comment=""/>
+<Origin spans="118~123" text="Canada" id="O0" comment=""/>
+<Living_Situation spans="197~239" text="participants' responses to social environment questions" id="LS0" comment=""/>
+<Outcome spans="164~185" text="specific health ailments" id="O7" comment=""/>
+<Outcome spans="241~275" text="onset of different health conditions" id="O8" comment=""/>
+<Outcome spans="284~307" text="onset of seven conditions" id="O9" comment=""/>
+<Outcome spans="460~485" text="onset of most health outcomes" id="O10" comment=""/>
+<Outcome spans="516~533" text="chronic conditions" id="O11" comment=""/>
+<Gender spans="276~287" text="participants" id="G0" comment=""/>
+<Age spans="275~299" text="over the next four years" id="A0" comment=""/>
+<Outcome spans="164~180" text="social environment" id="O12" comment=""/>
+<Outcome spans="511~526" text="social indicators" id="O13" comment=""/>
 </TAGS>
 <META/>
 </CVD_SDOH>
