@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CVD_SDOH>
+<TEXT><![CDATA[624. Health Place. 2013 May;21:133-9. doi: 10.1016/j.healthplace.2012.12.008. Epub  2013 Feb 4.
+
+Early life predictors of atrial fibrillation-related mortality: evidence from  the health and retirement study.
+
+Glymour MM(1), Benjamin EJ, Kosheleva A, Gilsanz P, Curtis LH, Patton KK.
+
+Author information: (1)Department of Society, Human Development, and Health, Harvard School of  Public Health, 677 Huntington Avenue, Kresge 617, Boston, MA 02115, USA.  mglymour@hsph.harvard.edu
+
+Prior research found that Americans born in 6 southeastern states (the AF-risk  zone) had elevated risk of AF-related mortality, but no mechanisms were  identified. We hypothesized the association between AF-related mortality and  AF-risk zone birth is explained by indicators of childhood social disadvantage  or adult risk factors. In 24,323 participants in the US Health and Retirement  Study, we found that birth in the AF-risk zone was significantly associated with  hazard of AF-related mortality. Among whites, the relationship was specific to  place of birth, rather than place of adult residence. Neither paternal education  nor subjectively assessed childhood SES predicted AF-related mortality.  Conventional childhood and adult cardiovascular risk factors did not explain the  association between place of birth and AF-related mortality.
+
+Copyright © 2013 Elsevier Ltd. All rights reserved.
+
+DOI: 10.1016/j.healthplace.2012.12.008 PMCID: PMC3640834 PMID: 23454734 [Indexed for MEDLINE]]]></TEXT>
+<TAGS>
+<Outcome spans="687~707" text="AF-related mortality" id="Ou0" comment=""/>
+<Outcome spans="1166~1186" text="AF-related mortality" id="Ou1" comment=""/>
+<Origin spans="713~731" text="AF-risk zone birth" id="O0" comment=""/>
+<Social_Adversity spans="762~791" text="childhood social disadvantage" id="So0" comment=""/>
+<Origin spans="893~918" text="birth in the AF-risk zone" id="O1" comment=""/>
+<Ethnicity_Race spans="992~998" text="whites" id="Et0" comment=""/>
+<Origin spans="1034~1048" text="place of birth" id="O2" comment=""/>
+<Outcome spans="1310~1330" text="AF-related mortality" id="Ou2" comment=""/>
+<Origin spans="1291~1305" text="place of birth" id="O4" comment=""/>
+<Outcome spans="572~609" text="elevated risk of AF-related mortality" id="Ou3" comment=""/>
+<Outcome spans="964~984" text="AF-related mortality" id="Ou4" comment=""/>
+<Outcome spans="122~159" text="atrial fibrillation-related mortality" id="Ou5" comment=""/>
+<Origin spans="508~547" text="Americans born in 6 southeastern states" id="O5" comment=""/>
+<Social_Adversity spans="796~814" text="adult risk factors" id="So1" comment=""/>
+<Living_Status spans="1062~1086" text="place of adult residence" id="L0" comment=""/>
+<Financial_Resource_Strain spans="1142~1155" text="childhood SES" id="F0" comment=""/>
+<Education id="Ed0" spans="-1~-1" text="" comment=""/>
+<Education id="Ed1" spans="-1~-1" text="" comment=""/>
+<Education spans="1096~1114" text="paternal education" id="Ed2" comment=""/>
+</TAGS>
+<META/>
+</CVD_SDOH>
