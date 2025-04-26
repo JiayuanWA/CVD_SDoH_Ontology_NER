@@ -1,39 +1,44 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <CVD_SDOH>
 <TEXT><![CDATA[
-617. Psychol Health. 2014;29(7):753-67. doi: 10.1080/08870446.2014.884221. Epub 2014  Feb 17.
+<![CDATA[583. J Epidemiol Community Health. 2015 Dec;69(12):1199-207. doi:  10.1136/jech-2015-205728. Epub 2015 Jul 1.
 
-Connecting social environment variables to the onset of major specific health  outcomes.
+Spatial social polarisation: using the Index of Concentration at the Extremes  jointly for income and race/ethnicity to analyse risk of hypertension.
 
-Hill PL(1), Weston SJ, Jackson JJ.
+Feldman JM(1), Waterman PD(1), Coull BA(2), Krieger N(1).
 
-Author information: (1)a Department of Psychology , Carleton University , Ottawa , ON , Canada.
+Author information: (1)Department of Social and Behavioral Sciences, Harvard T.H. Chan School of  Public Health, Boston, Massachusetts, USA. (2)Department of Environmental Health, Department of Biostatistics, Harvard T.H.  Chan School of Public Health, Boston, Massachusetts, USA.
 
-OBJECTIVE: The present research examined the effects of the social environment  on the onset of specific health ailments. DESIGN: Using data from the Health and Retirement Study, we examined  participants' responses to social environment questions in 2006 as predictors of  onset of different health conditions over the next four years. MAIN OUTCOME MEASURES: Healthy participants (n = 7514) reported on their number  of social partners, interaction frequency, positive social support and negative  social support with respect to both their family and friends. These variables  were used to predict onset of seven conditions in 2010: high blood pressure,  heart condition, lung disease, cancer, stroke, diabetes and arthritis. RESULTS: Logistic regressions indicated that the social environment provided  some predictive value for onset of most health outcomes, with more positive and  less negative social support appearing to buffer against onset. Social  environmental variables related to friendships appeared to play a greater role  than the family indicators. However, no variable proved universally adaptive,  and social indicators had little value in predicting onset of chronic  conditions. CONCLUSION: The current findings point to the potential for the social  environment to influence later health, while demonstrating the nuanced role that  our social lives play with respect to health.
+BACKGROUND: Growing spatial social and economic polarisation may be an important  societal determinant of health, but only a few studies have used the recently  developed Index of Concentration at the Extremes (ICE) to analyse the impact of  joint concentrations of privilege and privation on health outcomes. We explore  use of the ICE to investigate risk of hypertension in an urban,  multiracial/ethnic, and predominantly working-class study population of US  adults. METHODS: We generated novel ICE measures at the census tract level that jointly  assess extreme concentrations of both income and racial/ethnic composition. We  then linked the ICE measures to data from two observational, cross-sectional  studies conducted in the Boston metropolitan area (2003-2004; 2008-2010;  N=2145). RESULTS: The ICE measure for extreme concentrations of white compared with black  residents was independently associated with lower odds of hypertension (OR=0.76;  95% CI 0.62 to 0.93), controlling for race/ethnicity, age, gender, smoking, body  mass index, household income, education and self-reported exposure to racial  discrimination. Even stronger associations were observed for the ICE measures  that compared concentrations of high-income white residents versus low-income  residents of colour (OR=0.61; 95% CI 0.40 to 0.96) and high-income white versus  low-income black residents (OR=0.48; 95% CI 0.29 to 0.81). CONCLUSIONS: Results suggest public health studies should explore the joint  impact of racial/ethnic and economic spatial polarisation on population health.
 
-DOI: 10.1080/08870446.2014.884221 PMID: 24438045 [Indexed for MEDLINE]
+Published by the BMJ Publishing Group Limited. For permission to use (where not  already granted under a licence) please go to  http://www.bmj.com/company/products-services/rights-and-licensing/
+
+DOI: 10.1136/jech-2015-205728 PMCID: PMC4878399 PMID: 26136082 [Indexed for MEDLINE]
+
+Conflict of interest statement: Competing interests None declared.]]>
 ]]></TEXT>
 <TAGS>
-<Outcome spans="408~426" text="high blood pressure" id="O0" comment=""/>
-<Outcome spans="428~443" text="heart condition" id="O1" comment=""/>
-<Outcome spans="445~457" text="lung disease" id="O2" comment=""/>
-<Outcome spans="459~465" text="cancer" id="O3" comment=""/>
-<Outcome spans="467~473" text="stroke" id="O4" comment=""/>
-<Outcome spans="475~482" text="diabetes" id="O5" comment=""/>
-<Outcome spans="484~492" text="arthritis" id="O6" comment=""/>
-<Social_Connections spans="319~341" text="positive social support" id="SC0" comment=""/>
-<Social_Connections spans="343~396" text="negative social support with respect to both their family and friends" id="SC1" comment=""/>
-<Origin spans="118~123" text="Canada" id="O0" comment=""/>
-<Living_Situation spans="197~239" text="participants' responses to social environment questions" id="LS0" comment=""/>
-<Outcome spans="164~185" text="specific health ailments" id="O7" comment=""/>
-<Outcome spans="241~275" text="onset of different health conditions" id="O8" comment=""/>
-<Outcome spans="284~307" text="onset of seven conditions" id="O9" comment=""/>
-<Outcome spans="460~485" text="onset of most health outcomes" id="O10" comment=""/>
-<Outcome spans="516~533" text="chronic conditions" id="O11" comment=""/>
-<Gender spans="276~287" text="participants" id="G0" comment=""/>
-<Age spans="275~299" text="over the next four years" id="A0" comment=""/>
-<Outcome spans="164~180" text="social environment" id="O12" comment=""/>
-<Outcome spans="511~526" text="social indicators" id="O13" comment=""/>
+<Outcome spans="248~268" text="risk of hypertension" id="O0" comment=""/>
+<Outcome spans="248~268" text="risk of hypertension" id="O1" comment=""/>
+<Ethnicity_Race spans="222~236" text="race/ethnicity" id="ER0" comment=""/>
+<Ethnicity_Race spans="1004~1017" text="racial/ethnic" id="ER1" comment=""/>
+<Ethnicity_Race spans="1213~1238" text="racial/ethnic composition" id="ER2" comment=""/>
+<Ethnicity_Race spans="1460~1465" text="white" id="ER3" comment=""/>
+<Ethnicity_Race spans="1480~1485" text="black" id="ER4" comment=""/>
+<Ethnicity_Race spans="222~236" text="race/ethnicity" id="ER5" comment=""/>
+<Ethnicity_Race spans="1887~1906" text="residents of colour" id="ER6" comment=""/>
+<Ethnicity_Race spans="1480~1485" text="black" id="ER7" comment=""/>
+<Age spans="1623~1626" text="age" id="A0" comment=""/>
+<Gender spans="1628~1634" text="gender" id="G0" comment=""/>
+<Tobacco_Use spans="1636~1643" text="smoking" id="TU0" comment=""/>
+<Financial_Resource_Strain spans="211~217" text="income" id="FRS0" comment=""/>
+<Education spans="1681~1690" text="education" id="E0" comment=""/>
+<Financial_Resource_Strain spans="211~217" text="income" id="FRS1" comment=""/>
+<Financial_Resource_Strain spans="1840~1851" text="high-income" id="FRS2" comment=""/>
+<Financial_Resource_Strain spans="1875~1885" text="low-income" id="FRS3" comment=""/>
+<Financial_Resource_Strain spans="1840~1851" text="high-income" id="FRS4" comment=""/>
+<Financial_Resource_Strain spans="1875~1885" text="low-income" id="FRS5" comment=""/>
+<Origin spans="1347~1371" text="Boston metropolitan area" id="O0" comment=""/>
 </TAGS>
 <META/>
 </CVD_SDOH>

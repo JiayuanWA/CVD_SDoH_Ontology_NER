@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CVD_SDOH_updated>
+<TEXT><![CDATA[610. Biol Res Nurs. 2014 Jul;16(3):258-65. doi: 10.1177/1099800413491422. Epub 2013  Jun 7.
+
+Social determinants and heat shock protein-70 among African American and  non-Hispanic white women with atherosclerosis: a pilot study.
+
+Saban KL(1), Hoppensteadt D(2), Bryant FB(3), DeVon HA(4).
+
+Author information: (1)Marcella Niehoff School of Nursing, Loyola University, Maywood, IL, USA  Edward Hines Jr. Veterans Administration Hospital, Hines, IL, USA  ksaban@luc.edu. (2)Department of Pathology, Stritch School of Medicine, Loyola University,  Maywood, IL, USA. (3)Department of Psychology, Loyola University, Chicago, IL, USA. (4)College of Nursing, University of Illinois at Chicago, IL, USA.
+
+African American (AA) women are nearly twice as likely as non-Hispanic White  (NHW) women to develop atherosclerosis associated with cardiovascular disease.  Compelling evidence demonstrates that stress-related biomarkers, such as heat  shock protein-70 (HSP70), are associated with increased atherosclerosis risk.  Yet little is known about how social factors such as perceived discrimination,  subjective social status, and socioeconomic status contribute to the levels of  these biomarkers in women with atherosclerosis. The aims of this pilot study  were to (1) describe perceived everyday discrimination, subjective social  status, perceived stress, and HSP70 level in AA and NHW women diagnosed with  coronary or carotid artery disease requiring intervention and (2) determine the  extent to which perceived discrimination, subjective social status, and  perceived stress are associated with HSP70 level, controlling for age,  education, and race. The sample for this cross-sectional, descriptive pilot  study consisted of 10 AA and 21 NHW women admitted to the hospital for elective  percutaneous cardiac intervention or carotid endarterectomy. Participants  completed questionnaires measuring psychosocial variables and provided blood  samples for analysis of HSP70. Race, age, education, perceived stress, perceived  discrimination, and subjective social status significantly (p = .022) explained  34% of the variance in HSP70 levels. However, only subjective social status (p =  .031) and AA race (p = .031) were significant independent predictors of HSP70  levels, with lower subjective social status and AA race associated with higher  HSP70. Although larger studies are needed to confirm these results, findings  imply that race and subjective social status may play an important role in  predicting stress biomarker levels.
+
+© The Author(s) 2013.
+
+DOI: 10.1177/1099800413491422 PMID: 23749050 [Indexed for MEDLINE]]]></TEXT>
+<TAGS>
+<Ethnicity_Race spans="145~161" text="African American" id="Et0" comment=""/>
+<Ethnicity_Race spans="167~185" text="non-Hispanic white" id="Et1" comment=""/>
+<Gender spans="186~191" text="women" id="G0" comment=""/>
+<Ethnicity_Race spans="697~713" text="African American" id="Et2" comment=""/>
+<Gender spans="719~724" text="women" id="G1" comment=""/>
+<Ethnicity_Race spans="755~773" text="non-Hispanic White" id="Et3" comment=""/>
+<Gender spans="781~786" text="women" id="G2" comment=""/>
+<Outcome spans="830~852" text="cardiovascular disease" id="Ou0" comment=""/>
+<Stress spans="893~899" text="stress" id="S0" comment=""/>
+<Outcome spans="980~1010" text="increased atherosclerosis risk" id="Ou1" comment=""/>
+<Safety_and_Environment spans="1066~1090" text="perceived discrimination" id="Sa0" comment=""/>
+<Safety_and_Environment spans="1093~1117" text="subjective social status" id="Sa1" comment=""/>
+<Financial_Resource id="F0" spans="-1~-1" text="" comment=""/>
+<Financial_Resource id="F1" spans="-1~-1" text="" comment=""/>
+<Financial_Resource id="F2" spans="-1~-1" text="" comment=""/>
+<Gender spans="1193~1198" text="women" id="G3" comment=""/>
+<Safety_and_Environment spans="1272~1305" text="perceived everyday discrimination" id="Sa2" comment=""/>
+<Safety_and_Environment spans="1307~1332" text="subjective social  status" id="Sa3" comment=""/>
+<Stress spans="1334~1350" text="perceived stress" id="S1" comment=""/>
+<Financial_Resource spans="1122~1143" text=" socioeconomic status" id="F3" comment=""/>
+<Stress spans="928~950" text="heat  shock protein-70" id="S2" comment=""/>
+<Stress spans="117~138" text="heat shock protein-70" id="S3" comment=""/>
+<Stress spans="1356~1367" text="HSP70 level" id="S4" comment=""/>
+<Ethnicity_Race spans="1371~1373" text="AA" id="Et4" comment=""/>
+<Ethnicity_Race spans="1378~1381" text="NHW" id="Et5" comment=""/>
+<Stress spans="1595~1606" text="HSP70 level" id="S5" comment=""/>
+<Safety_and_Environment spans="1501~1525" text="perceived discrimination" id="Sa4" comment=""/>
+<Safety_and_Environment spans="1527~1551" text="subjective social status" id="Sa5" comment=""/>
+<Stress spans="1558~1574" text="perceived stress" id="S6" comment=""/>
+<Age spans="1624~1627" text="age" id="Ag0" comment=""/>
+<Education spans="1630~1639" text="education" id="Ed0" comment=""/>
+<Ethnicity_Race spans="1645~1649" text="race" id="Et6" comment=""/>
+<Ethnicity_Race spans="1729~1731" text="AA" id="Et7" comment=""/>
+<Ethnicity_Race spans="1739~1742" text="NHW" id="Et8" comment=""/>
+<Gender spans="1743~1748" text="women" id="G4" comment=""/>
+<Stress spans="1965~1970" text="HSP70" id="S7" comment=""/>
+<Ethnicity_Race spans="1972~1976" text="race" id="Et9" comment=""/>
+<Age spans="1978~1981" text="age" id="Ag1" comment=""/>
+<Education spans="1983~1992" text="education" id="Ed1" comment=""/>
+<Stress spans="1994~2010" text="perceived stress" id="S8" comment=""/>
+<Safety_and_Environment spans="2012~2037" text="perceived  discrimination" id="Sa6" comment=""/>
+<Safety_and_Environment spans="2043~2067" text="subjective social status" id="Sa7" comment=""/>
+<Stress spans="2127~2132" text="HSP70" id="S9" comment=""/>
+<Safety_and_Environment spans="2155~2179" text="subjective social status" id="Sa8" comment=""/>
+<Ethnicity_Race spans="2196~2198" text="AA" id="Et10" comment=""/>
+<Ethnicity_Race spans="2199~2203" text="race" id="Et11" comment=""/>
+<Stress spans="2258~2263" text="HSP70" id="S10" comment=""/>
+<Safety_and_Environment spans="2284~2308" text="subjective social status" id="Sa9" comment=""/>
+<Ethnicity_Race spans="2313~2315" text="AA" id="Et12" comment=""/>
+<Ethnicity_Race spans="2316~2320" text="race" id="Et13" comment=""/>
+<Stress spans="2345~2350" text="HSP70" id="S11" comment=""/>
+<Ethnicity_Race spans="2434~2438" text="race" id="Et14" comment=""/>
+<Safety_and_Environment spans="2443~2467" text="subjective social status" id="Sa10" comment=""/>
+<Stress spans="2510~2516" text="stress" id="S12" comment=""/>
+</TAGS>
+<META/>
+</CVD_SDOH_updated>

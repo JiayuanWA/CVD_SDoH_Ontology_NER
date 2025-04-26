@@ -1,11 +1,15 @@
-617. Psychol Health. 2014;29(7):753-67. doi: 10.1080/08870446.2014.884221. Epub 2014  Feb 17.
+<![CDATA[583. J Epidemiol Community Health. 2015 Dec;69(12):1199-207. doi:  10.1136/jech-2015-205728. Epub 2015 Jul 1.
 
-Connecting social environment variables to the onset of major specific health  outcomes.
+Spatial social polarisation: using the Index of Concentration at the Extremes  jointly for income and race/ethnicity to analyse risk of hypertension.
 
-Hill PL(1), Weston SJ, Jackson JJ.
+Feldman JM(1), Waterman PD(1), Coull BA(2), Krieger N(1).
 
-Author information: (1)a Department of Psychology , Carleton University , Ottawa , ON , Canada.
+Author information: (1)Department of Social and Behavioral Sciences, Harvard T.H. Chan School of  Public Health, Boston, Massachusetts, USA. (2)Department of Environmental Health, Department of Biostatistics, Harvard T.H.  Chan School of Public Health, Boston, Massachusetts, USA.
 
-OBJECTIVE: The present research examined the effects of the social environment  on the onset of specific health ailments. DESIGN: Using data from the Health and Retirement Study, we examined  participants' responses to social environment questions in 2006 as predictors of  onset of different health conditions over the next four years. MAIN OUTCOME MEASURES: Healthy participants (n = 7514) reported on their number  of social partners, interaction frequency, positive social support and negative  social support with respect to both their family and friends. These variables  were used to predict onset of seven conditions in 2010: high blood pressure,  heart condition, lung disease, cancer, stroke, diabetes and arthritis. RESULTS: Logistic regressions indicated that the social environment provided  some predictive value for onset of most health outcomes, with more positive and  less negative social support appearing to buffer against onset. Social  environmental variables related to friendships appeared to play a greater role  than the family indicators. However, no variable proved universally adaptive,  and social indicators had little value in predicting onset of chronic  conditions. CONCLUSION: The current findings point to the potential for the social  environment to influence later health, while demonstrating the nuanced role that  our social lives play with respect to health.
+BACKGROUND: Growing spatial social and economic polarisation may be an important  societal determinant of health, but only a few studies have used the recently  developed Index of Concentration at the Extremes (ICE) to analyse the impact of  joint concentrations of privilege and privation on health outcomes. We explore  use of the ICE to investigate risk of hypertension in an urban,  multiracial/ethnic, and predominantly working-class study population of US  adults. METHODS: We generated novel ICE measures at the census tract level that jointly  assess extreme concentrations of both income and racial/ethnic composition. We  then linked the ICE measures to data from two observational, cross-sectional  studies conducted in the Boston metropolitan area (2003-2004; 2008-2010;  N=2145). RESULTS: The ICE measure for extreme concentrations of white compared with black  residents was independently associated with lower odds of hypertension (OR=0.76;  95% CI 0.62 to 0.93), controlling for race/ethnicity, age, gender, smoking, body  mass index, household income, education and self-reported exposure to racial  discrimination. Even stronger associations were observed for the ICE measures  that compared concentrations of high-income white residents versus low-income  residents of colour (OR=0.61; 95% CI 0.40 to 0.96) and high-income white versus  low-income black residents (OR=0.48; 95% CI 0.29 to 0.81). CONCLUSIONS: Results suggest public health studies should explore the joint  impact of racial/ethnic and economic spatial polarisation on population health.
 
-DOI: 10.1080/08870446.2014.884221 PMID: 24438045 [Indexed for MEDLINE]
+Published by the BMJ Publishing Group Limited. For permission to use (where not  already granted under a licence) please go to  http://www.bmj.com/company/products-services/rights-and-licensing/
+
+DOI: 10.1136/jech-2015-205728 PMCID: PMC4878399 PMID: 26136082 [Indexed for MEDLINE]
+
+Conflict of interest statement: Competing interests None declared.]]>

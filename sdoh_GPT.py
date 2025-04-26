@@ -45,7 +45,7 @@ def chunk_text(text, max_tokens=2048):
         chunks.append(" ".join(current_chunk))
     return chunks
 
-def chat_with_gpt(prompt, model="gpt-4o-mini"):
+def chat_with_gpt(prompt, model="gpt-4o"):
     try:
         response = client.chat.completions.create(
             model=model,
@@ -57,20 +57,55 @@ def chat_with_gpt(prompt, model="gpt-4o-mini"):
         print(f"Error in OpenAI API call: {e}")
         return None
 
-def parse_response(raw_text):
-    pattern = r'^(.*?):\s*\"(.*?)\",\s*Start:\s*(\d+),\s*End:\s*(\d+)'
+def normalize_spaces(text):
+    """Collapse multiple spaces into one, strip."""
+    return re.sub(r'\s+', ' ', text).strip()
+
+def parse_response(raw_text, full_text):
+    pattern = r'^(.+?):\s*"(.+?)",\s*Start:\s*\d+,\s*End:\s*\d+'
     results = []
+
+    # Normalize both sides for matching
+    full_text_normalized = normalize_spaces(full_text)
+
     for line in raw_text.splitlines():
         match = re.match(pattern, line.strip())
         if match:
-            category, phrase, start, end = match.groups()
+            category, phrase = match.groups()
+            phrase_normalized = normalize_spaces(phrase)
+
+            # Try to find match in normalized text
+            start_in_normalized = full_text_normalized.find(phrase_normalized)
+            if start_in_normalized == -1:
+                print(f"Phrase not found after normalization: \"{phrase}\" — skipping.")
+                continue
+
+            # Now find original span manually in the original full_text
+            # Strategy: Search for the original (non-normalized) phrase in full_text
+            start = full_text.find(phrase)
+            if start == -1:
+                # Fallback: search normalized phrase by allowing flexible spaces
+                pattern_phrase = re.sub(r'\s+', r'\\s+', re.escape(phrase_normalized))
+                match_original = re.search(pattern_phrase, full_text)
+                if match_original:
+                    start = match_original.start()
+                    end = match_original.end()
+                else:
+                    print(f"Even regex failed to find: \"{phrase}\" — skipping.")
+                    continue
+            else:
+                end = start + len(phrase)
+
             results.append({
                 "category": category.strip(),
                 "phrase": phrase,
-                "start": int(start),
-                "end": int(end)
+                "start": start,
+                "end": end
             })
+        else:
+            print(f"Failed to parse line: {line.strip()}")
     return results
+
 
 def generate_xml(text, extractions):
     id_counter = {}
@@ -126,7 +161,7 @@ def iou(span1, span2):
     union = max(end1, end2) - min(start1, start2)
     return inter / union if union > 0 else 0
 
-def evaluate_text_category_then_span(gold_path, predictions, text_threshold=0.85, span_threshold=0.5):
+def evaluate_text_category_then_span(gold_path, predictions):
     tree = ET.parse(gold_path)
     root = tree.getroot()
 
@@ -144,7 +179,7 @@ def evaluate_text_category_then_span(gold_path, predictions, text_threshold=0.85
         })
 
     matched_exact = 0
-    matched_wrong_span = 0
+    matched_partial = 0
     matched_wrong_type = 0
     false_positives = []
     matched_ids = set()
@@ -163,18 +198,23 @@ def evaluate_text_category_then_span(gold_path, predictions, text_threshold=0.85
             gold_cat = gold["category"]
             gold_text = gold["phrase"]
 
-            if text_similar(pred_text, gold_text, threshold=text_threshold):
+            # EXACT match check (text and category)
+            if pred_text.strip() == gold_text.strip():
                 matched_ids.add(i)
                 matched = True
                 if pred_cat == gold_cat:
                     matched_exact += 1
                     type_counts[pred_cat]["TP"] += 1
-                    if iou(pred_span, gold_span) < span_threshold:
-                        matched_wrong_span += 1
                 else:
                     matched_wrong_type += 1
                     type_counts[pred_cat]["FP"] += 1
                     type_counts[gold_cat]["FN"] += 1
+                break
+            # PARTIAL match check (text included but not identical)
+            elif (pred_text.strip() in gold_text.strip()) or (gold_text.strip() in pred_text.strip()):
+                matched_ids.add(i)
+                matched = True
+                matched_partial += 1
                 break
 
         if not matched:
@@ -189,17 +229,17 @@ def evaluate_text_category_then_span(gold_path, predictions, text_threshold=0.85
     recall = matched_exact / len(gold_tags) if gold_tags else 0
     f1 = 2 * precision * recall / (precision + recall) if (precision + recall) > 0 else 0
 
-    print("\n--- Evaluation (Text + Category Match → Span Check) ---")
-    print(f"True Positives (text + type):               {matched_exact}")
-    print(f"True Positives with Span Off:              {matched_wrong_span}")
-    print(f"Text Match but Wrong Category:             {matched_wrong_type}")
-    print(f"False Positives (no text match):           {len(false_positives)}")
-    print(f"False Negatives (gold not matched):        {len(false_negatives)}")
-    print(f"Precision:                                 {precision:.3f}")
-    print(f"Recall:                                    {recall:.3f}")
-    print(f"F1 Score:                                  {f1:.3f}")
+    print("\n--- Evaluation (Strict Exact Match) ---")
+    print(f"True Positives (exact match + type):        {matched_exact}")
+    print(f"Partial Matches (substring overlap):        {matched_partial}")
+    print(f"Wrong Category Matches (text ok):           {matched_wrong_type}")
+    print(f"False Positives (no match):                 {len(false_positives)}")
+    print(f"False Negatives (gold not matched):         {len(false_negatives)}")
+    print(f"Precision (exact only):                     {precision:.3f}")
+    print(f"Recall (exact only):                        {recall:.3f}")
+    print(f"F1 Score (exact only):                      {f1:.3f}")
 
-    print("\n--- Per-Class Breakdown ---")
+    print("\n--- Per-Class Breakdown (exact matches only) ---")
     for tag, counts in type_counts.items():
         tp, fp, fn = counts["TP"], counts["FP"], counts["FN"]
         prec = tp / (tp + fp) if (tp + fp) > 0 else 0
@@ -209,7 +249,7 @@ def evaluate_text_category_then_span(gold_path, predictions, text_threshold=0.85
 
     return {
         "TP_exact": matched_exact,
-        "TP_span_off": matched_wrong_span,
+        "TP_partial": matched_partial,
         "TP_wrong_type": matched_wrong_type,
         "FP": false_positives,
         "FN": false_negatives,
@@ -266,7 +306,7 @@ def evaluate_against_gold(gold_path, predictions):
 text = read_text_file(file_path)
 
 if text:
-    text_chunks = chunk_text(text, max_tokens=2000)
+    text_chunks = [text]
     all_extractions = []
     few_shot_prompt = load_few_shot_examples(examples_folder)
 
@@ -282,17 +322,19 @@ if text:
         - Phrases should capture the **full expression of the concept** as written in the original sentence.
         - ONLY extract phrases that match one of the 34 categories exactly as written in the list below.
         - All extracted phrases must be copied exactly from the input text.
-        - Return the character start and end position of each extracted phrase.
         - If a category appears more than once, return all matches.
         - Do NOT paraphrase or interpret. Use exact quotes.
-        - Extract at least 20 phrases.
+        - When extracting, always include surrounding words that are necessary to preserve the full meaning (e.g., extract "number of social partners" rather than just "social partners").
+        - Do not shorten phrases by dropping adjectives, numbers, quantities, or modifiers.
+        - Prefer longer complete expressions over partial phrases if both exist.
+        - Extract all complete meaningful expressions, but ignore overly generic words like 'health', 'conditions', or 'outcomes' unless fully specified (e.g., 'high blood pressure').
         - Extract **every single matching phrase** for each category, even if it appears redundant, repeated, or minor.
         - Ignore references, citations, metadata, author affiliations, and publication info (e.g., journal titles, DOIs, PMID, author lists).
 
         ### Categories:
                     - **Age**: Mentions of specific ages, age ranges, or life stages (e.g., child, adolescent, elderly).
                     - **Origin**: Mentions of nationality, country of origin, or geographic location.
-                    - **Ethnicity/Race**: Mentions of racial or ethnic identity (e.g., Black, Hispanic).
+                    - **Ethnicity_Race**: Mentions of racial or ethnic identity (e.g., Black, Hispanic).
                     - **Gender**: Mentions of male, female, or gender identity terms.
                     - **Marital Status**: Mentions of relationship status (e.g., married, divorced, widowed).
                     - **Alcohol Use**: Mentions of alcohol consumption, frequency, and effects.
@@ -335,16 +377,17 @@ if text:
         if result:
             if DEBUG:
                 print(f"\n--- GPT Output ---\n{result}\n")
-            extracted = parse_response(result)
+            extracted = parse_response(result, text)
             all_extractions.extend(extracted)
 
     xml_output = generate_xml(text, all_extractions)
     with open(output_file, "w", encoding="utf-8") as f:
         f.write(xml_output)
-    print(f"✅ Extraction complete. XML saved to: {output_file}")
+    print(f"Extraction complete. XML saved to: {output_file}")
 
     # Run evaluation
-    results = evaluate_text_category_then_span(gold_path, all_extractions, text_threshold=0.85, span_threshold=0.5)
+    results = evaluate_text_category_then_span(gold_path, all_extractions)
+
     print_error_table(results["FP"], results["FN"])
 
 else:
