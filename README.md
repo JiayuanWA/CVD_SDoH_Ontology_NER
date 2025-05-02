@@ -89,9 +89,9 @@ python sdoh_GPT.py
    - Outputs **structured results** in a file: `sdoh_llm_raw_responses.txt`.
 
 ---
-
 ## **Expected Output Format**
-Each extracted phrase is categorized based on SDoH attributes. The output file (`sdoh_llm_raw_responses.txt`) will contain results in the following format:
+
+The output will look like:
 
 ```json
 {
@@ -102,3 +102,69 @@ Each extracted phrase is categorized based on SDoH attributes. The output file (
   "Housing Stability": "Facing eviction"
 }
 ```
+
+For XML format:
+
+```xml
+<Age spans="25~37" text="47 years old" id="A0" comment=""/>
+```
+
+---
+
+## **Supporting Files**
+
+| File Name              | Purpose                                                                 |
+|------------------------|-------------------------------------------------------------------------|
+| `sdoh_text.txt`        | Input text for SDoH extraction.                                         |
+| `examples_xml/`        | Folder containing XML examples for few-shot prompting.                 |
+| `sdoh_extracted.xml`   | Output XML with extracted entities and spans.                          |
+| `gold_sdoh.xml`        | Gold standard annotation used for evaluation.                          |
+
+---
+
+## **Evaluation **
+
+After extraction, the script compares GPT's output with a gold standard (`gold_sdoh.xml`) using character-level span matching and category labels.
+
+### Matching Rules
+
+Each predicted phrase is matched against gold standard phrases:
+
+- **True Positive (Exact Match):**  
+  Phrase matches exactly **and** category is correct.
+
+- **Wrong Type:**  
+  Phrase matches, but the category is incorrect.
+
+- **Partial Match:**  
+  Phrase overlaps but is not an exact match.
+  Either the model got part of the phrase, or included too much, but the category may or may not be correct.
+
+- **False Positive:**  
+  Model predicted a phrase that doesn’t exist in the gold file.
+
+- **False Negative:**  
+  Model missed a phrase that exists in the gold file.
+
+### Metrics Reported
+
+- **Precision:** What % of model predictions were correct? True Positives / (True Positives + False Positives)
+- **Recall:** What % of gold annotations did the model find? True Positives / (True Positives + False Negatives)
+- **F1 Score:** Balance between precision and recall. 2 * (Precision * Recall) / (Precision + Recall)
+- **Per-category breakdown:** Accuracy for each SDoH type.
+
+### Sample Output
+
+```
+--- Evaluation (Strict Exact Match) ---
+True Positives:       12
+Partial Matches:       3
+Wrong Category:        1
+False Positives:       2
+False Negatives:       4
+Precision:          0.750
+Recall:             0.600
+F1 Score:           0.667
+```
+
+
