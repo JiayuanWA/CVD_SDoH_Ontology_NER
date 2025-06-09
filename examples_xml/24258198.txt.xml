@@ -16,33 +16,19 @@ DOI: 10.1136/jech-2013-202996 PMCID: PMC3932759 PMID: 24258198 [Indexed for MEDL
 <Financial_Resource spans="325~339" text="social capital" id="F1" comment=""/>
 <Financial_Resource spans="429~443" text="social capital" id="F2" comment=""/>
 <Financial_Resource spans="690~705" text="social  capital" id="F3" comment=""/>
-<Outcome spans="760~780" text="physical  inactivity" id="Ou1" comment=""/>
-<Outcome spans="732~752" text="self-reported health" id="Ou2" comment=""/>
-<Outcome spans="786~798" text="hypertension" id="Ou3" comment=""/>
 <Financial_Resource spans="800~814" text="social capital" id="F4" comment=""/>
-<Outcome spans="840~860" text="physical  inactivity" id="Ou4" comment=""/>
-<Outcome spans="831~838" text="low SRH" id="Ou5" comment=""/>
-<Outcome spans="866~878" text="hypertension" id="Ou6" comment=""/>
 <Origin spans="566~574" text="Montreal" id="O0" comment=""/>
 <Financial_Resource spans="913~926" text="socioeconomic" id="F5" comment=""/>
 <Education spans="1092~1121" text="higher educational attainment" id="Ed0" comment=""/>
 <Financial_Resource spans="1167~1181" text="social capital" id="F6" comment=""/>
-<Outcome spans="1198~1205" text="low SRH" id="Ou7" comment=""/>
-<Outcome spans="1220~1239" text="physical inactivity" id="Ou8" comment=""/>
-<Outcome spans="1253~1265" text="hypertension" id="Ou9" comment=""/>
 <Social_Connections spans="1275~1292" text="Social  isolation" id="Soc0" comment=""/>
-<Outcome spans="1309~1328" text="physical inactivity" id="Ou10" comment=""/>
-<Outcome spans="1341~1353" text="hypertension" id="Ou11" comment=""/>
 <Stress spans="1364~1380" text="Sense of control" id="S0" comment=""/>
 <Safety_and_Environment spans="1393~1411" text="perceived cohesion" id="Sa0" comment=""/>
-<Outcome spans="1435~1442" text="low SRH" id="Ou12" comment=""/>
 <Age spans="1445~1448" text="age" id="Ag0" comment=""/>
-<Outcome spans="1501~1513" text="hypertension" id="Ou13" comment=""/>
 <Age spans="1532~1535" text="age" id="Ag1" comment=""/>
 <Financial_Resource spans="1607~1620" text="socioeconomic" id="F8" comment=""/>
 <Financial_Resource spans="1470~1484" text="social capital" id="F9" comment=""/>
 <Social_Connections spans="1639~1688" text="increase actual and perceived social connectivity" id="Soc1" comment=""/>
-<Outcome spans="1716~1762" text="reducing social capital inequalities in health" id="Ou14" comment=""/>
 </TAGS>
 <META/>
 </CVD_SDOH_updated>

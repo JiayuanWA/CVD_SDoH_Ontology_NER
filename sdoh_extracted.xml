@@ -18,30 +18,37 @@ DOI: 10.1136/jech-2015-205728 PMCID: PMC4878399 PMID: 26136082 [Indexed for MEDL
 Conflict of interest statement: Competing interests None declared.]]>
 ]]></TEXT>
 <TAGS>
-<Age spans="729~735" text="adults" id="A0" comment=""/>
-<Origin spans="366~391" text="Boston, Massachusetts, USA" id="O0" comment=""/>
-<Origin spans="1005~1028" text="Boston metropolitan area" id="O1" comment=""/>
-<EthnicityRace spans="742~759" text="multiracial/ethnic" id="E0" comment=""/>
-<EthnicityRace spans="1110~1115" text="white" id="E1" comment=""/>
-<EthnicityRace spans="1128~1133" text="black" id="E2" comment=""/>
-<EthnicityRace spans="1185~1199" text="race/ethnicity" id="E3" comment=""/>
-<EthnicityRace spans="1364~1382" text="residents of colour" id="E4" comment=""/>
-<EthnicityRace spans="1410~1424" text="black residents" id="E5" comment=""/>
-<Gender spans="1207~1213" text="gender" id="G0" comment=""/>
-<Tobacco_Use spans="1081~1088" text="smoking" id="TU0" comment=""/>
-<FinancialResource spans="1025~1031" text="income" id="F0" comment=""/>
-<FinancialResource spans="1345~1360" text="household income" id="F1" comment=""/>
-<FinancialResource spans="1225~1235" text="high-income" id="F2" comment=""/>
-<FinancialResource spans="1249~1258" text="low-income" id="F3" comment=""/>
-<FinancialResource spans="1281~1291" text="high-income" id="F4" comment=""/>
-<FinancialResource spans="1305~1314" text="low-income" id="F5" comment=""/>
-<EthnicityRace spans="1225~1230" text="white" id="E6" comment=""/>
-<EthnicityRace spans="1259~1277" text="residents of colour" id="E7" comment=""/>
-<EthnicityRace spans="1281~1286" text="white" id="E8" comment=""/>
-<EthnicityRace spans="1315~1320" text="black" id="E9" comment=""/>
-<Social_Adversity spans="1261~1280" text="racial discrimination" id="SA0" comment=""/>
-<Education spans="1248~1257" text="education" id="E0" comment=""/>
-<Safety_&_Environmental_Exposure spans="1240~1280" text="self-reported exposure to racial discrimination" id="S&EE0" comment=""/>
+<Origin spans="1000~1022" text="Boston metropolitan area" id="O0" comment=""/>
+<EthnicityRace spans="811~828" text="multiracial/ethnic" id="E0" comment=""/>
+<EthnicityRace spans="1160~1165" text="white" id="E1" comment=""/>
+<EthnicityRace spans="1177~1182" text="black" id="E2" comment=""/>
+<EthnicityRace spans="125~140" text="race/ethnicity" id="E3" comment=""/>
+<EthnicityRace spans="1085~1100" text="race/ethnicity" id="E4" comment=""/>
+<EthnicityRace spans="1390~1408" text="residents of colour" id="E5" comment=""/>
+<EthnicityRace spans="1444~1458" text="black residents" id="E6" comment=""/>
+<Gender spans="1118~1124" text="gender" id="G0" comment=""/>
+<Age spans="860~866" text="adults" id="A0" comment=""/>
+<Tobacco_Use spans="1121~1128" text="smoking" id="TU0" comment=""/>
+<Stress spans="1221~1263" text="self-reported exposure to racial discrimination" id="S0" comment=""/>
+<FinancialResource spans="204~210" text="income" id="F0" comment=""/>
+<FinancialResource spans="1010~1016" text="income" id="F1" comment=""/>
+<FinancialResource spans="1255~1265" text="low-income" id="F2" comment=""/>
+<FinancialResource spans="1320~1330" text="low-income" id="F3" comment=""/>
+<FinancialResource spans="1224~1234" text="high-income" id="F4" comment=""/>
+<FinancialResource spans="1289~1299" text="high-income" id="F5" comment=""/>
+<FinancialResource spans="1084~1100" text="household income" id="F6" comment=""/>
+<EthnicityRace spans="211~225" text="race/ethnicity" id="E7" comment=""/>
+<EthnicityRace spans="586~599" text="racial/ethnic" id="E8" comment=""/>
+<EthnicityRace spans="1400~1413" text="racial/ethnic" id="E9" comment=""/>
+<EthnicityRace spans="1185~1190" text="white" id="E10" comment=""/>
+<EthnicityRace spans="1202~1207" text="black" id="E11" comment=""/>
+<EthnicityRace spans="1266~1285" text="residents of colour" id="E12" comment=""/>
+<EthnicityRace spans="1235~1240" text="white" id="E13" comment=""/>
+<EthnicityRace spans="1331~1336" text="black" id="E14" comment=""/>
+<EthnicityRace spans="1060~1074" text="race/ethnicity" id="E15" comment=""/>
+<Social_Adversity spans="1125~1144" text="racial discrimination" id="SA0" comment=""/>
+<Education spans="1105~1114" text="education" id="E0" comment=""/>
+<Safety_and_Environmental_Exposure spans="1105~1144" text="self-reported exposure to racial discrimination" id="SaEE0" comment=""/>
 </TAGS>
 <META/>
 </CVD_SDOH>

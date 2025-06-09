@@ -17,14 +17,11 @@ PMID: 24400461 [Indexed for MEDLINE]]]></TEXT>
 <Origin spans="726~732" text="Canada" id="O0" comment=""/>
 <Social_Adversity spans="752~758" text="Racism" id="So2" comment=""/>
 <Stress spans="760~766" text="stress" id="S0" comment=""/>
-<Outcome spans="870~911" text="long-term impact on cardiovascular health" id="Ou0" comment=""/>
 <Stress spans="1007~1029" text=" racism-related stress" id="S1" comment=""/>
 <Stress spans="843~861" text=" stress of  racism" id="S2" comment=""/>
 <Ethnicity_Race spans="1035~1057" text="race-based differences" id="Et0" comment=""/>
 <Social_Adversity spans="53~59" text="Racism" id="So3" comment=""/>
 <Social_Adversity spans="585~591" text="Racism" id="So4" comment=""/>
-<Outcome spans="64~86" text="cardiovascular disease" id="Ou1" comment=""/>
-<Outcome spans="773~795" text="cardiovascular disease" id="Ou2" comment=""/>
 </TAGS>
 <META/>
 </CVD_SDOH>

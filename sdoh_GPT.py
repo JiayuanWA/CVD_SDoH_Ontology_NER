@@ -34,7 +34,7 @@ BATCHES = {
     ],
     "Community + Built Environment": [
         "Caregiver Support", "Living Situation", "Social Connections", "Social Adversity",
-        "Education", "Safety & Environmental Exposure", "Transportation Needs", "Utilities"
+        "Education", "Safety and Environmental Exposure", "Transportation Needs", "Utilities"
     ]
 }
 
@@ -71,7 +71,7 @@ CATEGORY_DEFINITIONS = {
     "Social Connections": "Mentions of emotional or physical support from family, friends, or others.",
     "Social Adversity": "Mentions of abuse, discrimination, or adverse social experiences.",
     "Education": "Mentions of educational attainment, school or college attendance, literacy level, or barriers to accessing education.",
-    "Safety & Environmental Exposure": "Mentions of unsafe environments, toxins, or hazardous conditions.",
+    "Safety and Environmental Exposure": "Mentions of unsafe environments, toxins, or hazardous conditions.",
     "Transportation Needs": "Mentions of transportation access, barriers, or challenges.",
     "Utilities": "Mentions of access to electricity, water, internet, or related issues."
 }
@@ -179,7 +179,11 @@ def evaluate_against_gold(gold_path, predictions):
     root = tree.getroot()
     gold_tags = []
     for tag in root.find("TAGS"):
-        category = tag.tag.replace("_", " ")
+        raw = tag.tag.replace("_", " ").strip()
+        normalized = raw.lower().replace(" ", "")
+        CATEGORY_LOOKUP = {k.lower().replace(" ", ""): k for k in CATEGORY_DEFINITIONS.keys()}
+        category = CATEGORY_LOOKUP.get(normalized, raw)
+
         phrase = tag.attrib["text"].strip()
         span = tag.attrib["spans"]
         start, end = map(int, span.split("~"))
@@ -270,6 +274,7 @@ You are a high-accuracy extraction model for Social Determinants of Health (SDoH
 - Extract **complete and self-contained phrases**.
 - Copy exact text spans. Do not paraphrase.
 - Extract every relevant match for the given categories.
+- Ignore boilerplate (e.g., author affiliations, copyright)
 
 ### Categories in this batch:
 {category_definitions}

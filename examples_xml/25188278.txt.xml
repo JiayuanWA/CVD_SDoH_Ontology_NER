@@ -12,46 +12,21 @@ INTRODUCTION: Cardiovascular disease (CVD) is the leading cause of death among  
 
 DOI: 10.5888/pcd11.140044 PMCID: PMC4157556 PMID: 25188278 [Indexed for MEDLINE]]]></TEXT>
 <TAGS>
-<Outcome spans="93~107" text="cardiovascular" id="Ou0" comment=""/>
 <Origin spans="148~162" text="South Carolina" id="O0" comment=""/>
-<Outcome spans="650~672" text="cardiovascular disease" id="Ou1" comment=""/>
 <Origin spans="716~718" text="US" id="O1" comment=""/>
 <Gender spans="719~724" text="women" id="G0" comment=""/>
 <Gender spans="836~841" text="women" id="G1" comment=""/>
-<Outcome spans="843~855" text="hypertension" id="Ou2" comment=""/>
-<Outcome spans="857~877" text="hypercholesterolemia" id="Ou3" comment=""/>
-<Outcome spans="903~911" text="diabetes" id="Ou5" comment=""/>
-<Outcome spans="940~943" text="CVD" id="Ou6" comment=""/>
-<Outcome spans="674~677" text="CVD" id="Ou7" comment=""/>
 <Healthcare_Access spans="1049~1058" text="uninsured" id="He0" comment=""/>
 <Gender spans="1070~1076" text="female" id="G2" comment=""/>
 <Age spans="1091~1110" text="aged 40 to 65 years" id="Ag0" comment=""/>
 <Origin spans="1157~1171" text="South Carolina" id="O2" comment=""/>
 <Gender spans="1218~1223" text="women" id="G3" comment=""/>
 <Gender spans="1274~1279" text="women" id="G4" comment=""/>
-<Outcome spans="1575~1600" text="uncontrolled hypertension" id="Ou8" comment=""/>
-<Outcome spans="1612~1632" text="hypercholesterolemia" id="Ou9" comment=""/>
-<Outcome spans="1646~1654" text="diabetes" id="Ou10" comment=""/>
-<Outcome spans="1670~1693" text="untreated  hypertension" id="Ou11" comment=""/>
-<Outcome spans="1705~1725" text="hypercholesterolemia" id="Ou12" comment=""/>
-<Outcome spans="1735~1743" text="diabetes" id="Ou13" comment=""/>
-<Outcome spans="1788~1808" text="hypercholesterolemia" id="Ou14" comment=""/>
-<Outcome spans="1813~1825" text="hypertension" id="Ou15" comment=""/>
-<Outcome spans="1906~1914" text="diabetes" id="Ou16" comment=""/>
-<Outcome spans="1921~1928" text="obesity" id="Ou17" comment=""/>
-<Outcome spans="1987~2007" text="hypercholesterolemia" id="Ou18" comment=""/>
-<Outcome spans="2021~2032" text="Being obese" id="Ou19" comment=""/>
-<Outcome spans="2046~2056" text="overweight" id="Ou20" comment=""/>
 <Age spans="2071~2092" text="aged 60 years or more" id="Ag1" comment=""/>
 <Ethnicity_Race spans="2110~2115" text="black" id="Et0" comment=""/>
-<Outcome spans="2180~2183" text="CVD" id="Ou21" comment=""/>
 <Ethnicity_Race spans="2203~2208" text="black" id="Et1" comment=""/>
-<Outcome spans="2260~2286" text="having comorbid conditions" id="Ou22" comment=""/>
-<Outcome spans="2314~2330" text="uncontrolled CVD" id="Ou23" comment=""/>
 <Gender spans="2393~2400" text="program" id="G5" comment=""/>
-<Outcome spans="883~901" text=" diabetes mellitus" id="Ou24" comment=""/>
 <Gender spans="2465~2470" text="women" id="G6" comment=""/>
-<Outcome spans="2530~2533" text="CVD" id="Ou25" comment=""/>
 </TAGS>
 <META/>
 </CVD_SDOH_updated>

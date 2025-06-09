@@ -21,9 +21,7 @@ DOI: 10.1177/1099800413491422 PMID: 23749050 [Indexed for MEDLINE]]]></TEXT>
 <Gender spans="719~724" text="women" id="G1" comment=""/>
 <Ethnicity_Race spans="755~773" text="non-Hispanic White" id="Et3" comment=""/>
 <Gender spans="781~786" text="women" id="G2" comment=""/>
-<Outcome spans="830~852" text="cardiovascular disease" id="Ou0" comment=""/>
 <Stress spans="893~899" text="stress" id="S0" comment=""/>
-<Outcome spans="980~1010" text="increased atherosclerosis risk" id="Ou1" comment=""/>
 <Safety_and_Environment spans="1066~1090" text="perceived discrimination" id="Sa0" comment=""/>
 <Safety_and_Environment spans="1093~1117" text="subjective social status" id="Sa1" comment=""/>
 <Financial_Resource id="F0" spans="-1~-1" text="" comment=""/>

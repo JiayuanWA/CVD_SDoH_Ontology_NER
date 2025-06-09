@@ -15,21 +15,9 @@ DOI: 10.1186/1472-6963-14-10 PMCID: PMC3893361 PMID: 24397292 [Indexed for MEDLI
 <Social_Connections spans="1844~1858" text="social support" id="Soc0" comment=""/>
 <Education spans="962~977" text="health literacy" id="Ed0" comment=""/>
 <Education spans="2050~2065" text="health literacy" id="Ed1" comment=""/>
-<Outcome spans="873~884" text="readmission" id="Ou2" comment=""/>
-<Outcome spans="889~918" text="other adverse health outcomes" id="Ou3" comment=""/>
-<Outcome spans="1033~1056" text="post-discharge outcomes" id="Ou4" comment=""/>
 <Healthcare_Access spans="1900~1924" text="health care  utilization" id="He0" comment=""/>
 <Education spans="2419~2434" text="health literacy" id="Ed2" comment=""/>
-<Outcome spans="2625~2648" text="post-discharge outcomes" id="Ou5" comment=""/>
-<Outcome spans="2604~2620" text="care transitions" id="Ou6" comment=""/>
-<Outcome spans="2484~2500" text="care transitions" id="Ou7" comment=""/>
-<Outcome spans="828~853" text="cardiovascular conditions" id="Ou8" comment=""/>
-<Outcome spans="91~122" text="health after hospital discharge" id="Ou9" comment=""/>
-<Outcome spans="1232~1256" text="acute coronary syndromes" id="Ou10" comment=""/>
-<Outcome spans="1260~1293" text="acute decompensated heart failure" id="Ou11" comment=""/>
-<Outcome spans="2177~2186" text="mortality" id="Ou12" comment=""/>
 <Healthcare_Access spans="2100~2121" text="medication management" id="He1" comment=""/>
-<Outcome spans="2505~2536" text="outcomes after  hospitalization" id="Ou13" comment=""/>
 </TAGS>
 <META/>
 </CVD_SDOH>
