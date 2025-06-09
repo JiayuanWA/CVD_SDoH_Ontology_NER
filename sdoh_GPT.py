@@ -21,14 +21,14 @@ gold_path = "gold_sdoh.xml"
 
 # Define category batches
 BATCHES = {
-    "Demographic": ["Age", "Origin", "Ethnicity_Race", "Gender", "Marital Status"],
+    "Demographic": ["Age", "Origin", "EthnicityRace", "Gender", "Marital Status"],
     "Substance Use": ["Alcohol Use", "Tobacco Use", "Illicit Drug Use", "Caffeine Use"],
     "Psychosocial + Lifestyle": [
         "Stress", "Psychological Concern", "Nutrition and Diet", "Physical Activity",
         "Sleep", "Sexual Activities", "Use of Contraception", "Treatment Adherence"
     ],
     "Economic Stability + Access": [
-        "Employment", "Financial_Resource", "Food Insecurity", "Housing Stability",
+        "Employment", "FinancialResource", "Food Insecurity", "Housing Stability",
         "Insurance Coverage", "Healthcare Technology Access", "Medical Access",
         "Erratic Healthcare", "Maintaining Care", "Dental Access"
     ],
@@ -41,7 +41,7 @@ BATCHES = {
 CATEGORY_DEFINITIONS = {
     "Age": "Mentions of specific ages, age ranges, or life stages (e.g., child, adolescent, elderly).",
     "Origin": "Mentions of nationality, country of origin, or geographic location.",
-    "Ethnicity_Race": "Mentions of racial or ethnic identity (e.g., Black, Hispanic).",
+    "EthnicityRace": "Mentions of racial or ethnic identity (e.g., Black, Hispanic).",
     "Gender": "Mentions of male, female, or gender identity terms.",
     "Marital Status": "Mentions of relationship status (e.g., married, divorced, widowed).",
     "Alcohol Use": "Mentions of alcohol consumption, frequency, and effects.",
@@ -57,7 +57,7 @@ CATEGORY_DEFINITIONS = {
     "Use of Contraception": "Mentions of birth control or contraceptive methods.",
     "Treatment Adherence": "Mentions of medication adherence, missed doses, or compliance.",
     "Employment": "Mentions of jobs, professions, work conditions, or unemployment.",
-    "Financial_Resource": "Mentions of financial struggles, poverty, or inability to pay bills.",
+    "FinancialResource": "Mentions of financial struggles, poverty, or inability to pay bills.",
     "Food Insecurity": "Mentions of hunger, limited food access, or nutritional deprivation.",
     "Housing Stability": "Mentions of homelessness, frequent moves, or housing issues.",
     "Insurance Coverage": "Mentions of health insurance, coverage, or lack of coverage.",
@@ -120,7 +120,7 @@ def normalize_spaces(text):
 def parse_response(raw_text, full_text):
     pattern = r'^(.+?):\s*"(.+?)",\s*Start:\s*(\d+),\s*End:\s*(\d+)'
     results = []
-    VALID_CATEGORIES = set(CATEGORY_DEFINITIONS.keys())
+    CATEGORY_LOOKUP = {k.lower().replace(" ", ""): k for k in CATEGORY_DEFINITIONS.keys()}
     used_spans = set()
 
     for line in raw_text.splitlines():
@@ -134,9 +134,12 @@ def parse_response(raw_text, full_text):
 
             # Clean category name
             category = re.sub(r'[^a-zA-Z &]', '', raw_cat).strip()
-            if category not in VALID_CATEGORIES:
-                print(f"⚠️ Skipping unknown category: {category}")
+            normalized_key = category.lower().replace(" ", "")
+            if normalized_key not in CATEGORY_LOOKUP:
+                print(f"Skipping unknown category: {category}")
                 continue
+            category = CATEGORY_LOOKUP[normalized_key]
+
 
             start, end = int(start), int(end)
             span_key = (start, end)

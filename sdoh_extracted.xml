@@ -18,34 +18,30 @@ DOI: 10.1136/jech-2015-205728 PMCID: PMC4878399 PMID: 26136082 [Indexed for MEDL
 Conflict of interest statement: Competing interests None declared.]]>
 ]]></TEXT>
 <TAGS>
-<-_**Age** spans="732~738" text="adults" id="-*0" comment=""/>
-<-_**Origin** spans="1000~1023" text="Boston metropolitan area" id="-*0" comment=""/>
-<-_**Ethnicity_Race** spans="715~732" text="multiracial/ethnic" id="-*R0" comment=""/>
-<-_**Ethnicity_Race** spans="1125~1130" text="white" id="-*R1" comment=""/>
-<-_**Ethnicity_Race** spans="1143~1148" text="black" id="-*R2" comment=""/>
-<-_**Ethnicity_Race** spans="1190~1204" text="race/ethnicity" id="-*R3" comment=""/>
-<-_**Ethnicity_Race** spans="1320~1338" text="residents of colour" id="-*R4" comment=""/>
-<-_**Ethnicity_Race** spans="1365~1370" text="black" id="-*R5" comment=""/>
-<-_**Gender** spans="1206~1212" text="gender" id="-*0" comment=""/>
-<Tobacco_Use spans="1121~1128" text="smoking" id="TU0" comment=""/>
-<Financial_Resource spans="303~309" text="income" id="FR0" comment=""/>
-<Financial_Resource spans="470~479" text="privation" id="FR1" comment=""/>
-<Financial_Resource spans="732~738" text="income" id="FR2" comment=""/>
-<Financial_Resource spans="1265~1280" text="household income" id="FR3" comment=""/>
-<Financial_Resource spans="1395~1405" text="high-income" id="FR4" comment=""/>
-<Financial_Resource spans="1424~1433" text="low-income" id="FR5" comment=""/>
-<Financial_Resource spans="1460~1470" text="high-income" id="FR6" comment=""/>
-<Financial_Resource spans="1489~1498" text="low-income" id="FR7" comment=""/>
-<Ethnicity_Race spans="740~745" text="white" id="ER0" comment=""/>
-<Ethnicity_Race spans="760~765" text="black" id="ER1" comment=""/>
-<Ethnicity_Race spans="1270~1284" text="race/ethnicity" id="ER2" comment=""/>
-<Ethnicity_Race spans="1434~1453" text="residents of colour" id="ER3" comment=""/>
-<Ethnicity_Race spans="1471~1476" text="white" id="ER4" comment=""/>
-<Ethnicity_Race spans="1499~1504" text="black" id="ER5" comment=""/>
-<Employment spans="654~667" text="working-class" id="E0" comment=""/>
-<-_Social_Adversity spans="1220~1239" text="racial discrimination" id="-SA0" comment=""/>
-<-_Education spans="1210~1219" text="education" id="-E0" comment=""/>
-<-_Safety_&_Environmental_Exposure spans="303~336" text="Department of Environmental Health" id="-S&EE0" comment=""/>
+<Age spans="729~735" text="adults" id="A0" comment=""/>
+<Origin spans="366~391" text="Boston, Massachusetts, USA" id="O0" comment=""/>
+<Origin spans="1005~1028" text="Boston metropolitan area" id="O1" comment=""/>
+<EthnicityRace spans="742~759" text="multiracial/ethnic" id="E0" comment=""/>
+<EthnicityRace spans="1110~1115" text="white" id="E1" comment=""/>
+<EthnicityRace spans="1128~1133" text="black" id="E2" comment=""/>
+<EthnicityRace spans="1185~1199" text="race/ethnicity" id="E3" comment=""/>
+<EthnicityRace spans="1364~1382" text="residents of colour" id="E4" comment=""/>
+<EthnicityRace spans="1410~1424" text="black residents" id="E5" comment=""/>
+<Gender spans="1207~1213" text="gender" id="G0" comment=""/>
+<Tobacco_Use spans="1081~1088" text="smoking" id="TU0" comment=""/>
+<FinancialResource spans="1025~1031" text="income" id="F0" comment=""/>
+<FinancialResource spans="1345~1360" text="household income" id="F1" comment=""/>
+<FinancialResource spans="1225~1235" text="high-income" id="F2" comment=""/>
+<FinancialResource spans="1249~1258" text="low-income" id="F3" comment=""/>
+<FinancialResource spans="1281~1291" text="high-income" id="F4" comment=""/>
+<FinancialResource spans="1305~1314" text="low-income" id="F5" comment=""/>
+<EthnicityRace spans="1225~1230" text="white" id="E6" comment=""/>
+<EthnicityRace spans="1259~1277" text="residents of colour" id="E7" comment=""/>
+<EthnicityRace spans="1281~1286" text="white" id="E8" comment=""/>
+<EthnicityRace spans="1315~1320" text="black" id="E9" comment=""/>
+<Social_Adversity spans="1261~1280" text="racial discrimination" id="SA0" comment=""/>
+<Education spans="1248~1257" text="education" id="E0" comment=""/>
+<Safety_&_Environmental_Exposure spans="1240~1280" text="self-reported exposure to racial discrimination" id="S&EE0" comment=""/>
 </TAGS>
 <META/>
 </CVD_SDOH>

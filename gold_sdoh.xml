@@ -16,31 +16,31 @@ DOI: 10.1136/jech-2015-205728 PMCID: PMC4878399 PMID: 26136082 [Indexed for MEDL
 
 Conflict of interest statement: Competing interests None declared.]]></TEXT>
 <TAGS>
-<Financial_Resource spans="202~208" text="income" id="F0" comment=""/>
-<Ethnicity_Race spans="213~227" text="race/ethnicity" id="Et0" comment=""/>
+<FinancialResource spans="202~208" text="income" id="F0" comment=""/>
+<EthnicityRace spans="213~227" text="race/ethnicity" id="Et0" comment=""/>
 <Origin spans="982~987" text="urban" id="O0" comment=""/>
-<Ethnicity_Race spans="990~1008" text="multiracial/ethnic" id="Et1" comment=""/>
+<EthnicityRace spans="990~1008" text="multiracial/ethnic" id="Et1" comment=""/>
 <Employment spans="1028~1041" text="working-class" id="E0" comment=""/>
 <Financial_Resource spans="1193~1199" text="income" id="F1" comment=""/>
-<Ethnicity_Race spans="1204~1217" text="racial/ethnic" id="Et2" comment=""/>
+<EthnicityRace spans="1204~1217" text="racial/ethnic" id="Et2" comment=""/>
 <Origin spans="1345~1362" text="metropolitan area" id="O1" comment=""/>
-<Ethnicity_Race spans="1471~1476" text="black" id="Et3" comment=""/>
-<Ethnicity_Race spans="1598~1612" text="race/ethnicity" id="Et4" comment=""/>
+<EthnicityRace spans="1471~1476" text="black" id="Et3" comment=""/>
+<EthnicityRace spans="1598~1612" text="race/ethnicity" id="Et4" comment=""/>
 <Age spans="1614~1617" text="age" id="Ag0" comment=""/>
 <Gender spans="1619~1625" text="gender" id="G0" comment=""/>
-<Tobacco_Use spans="1627~1634" text="smoking" id="T0" comment=""/>
-<Financial_Resource spans="1654~1670" text="household income" id="F2" comment=""/>
+<TobaccoUse spans="1627~1634" text="smoking" id="T0" comment=""/>
+<FinancialResource spans="1654~1670" text="household income" id="F2" comment=""/>
 <Education spans="1672~1681" text="education" id="Ed0" comment=""/>
-<Social_Adversity spans="1686~1734" text="self-reported exposure to racial  discrimination" id="So0" comment=""/>
-<Financial_Resource spans="1831~1842" text="high-income" id="F3" comment=""/>
-<Ethnicity_Race spans="1843~1848" text="white" id="Et5" comment=""/>
-<Financial_Resource spans="1866~1876" text="low-income" id="F4" comment=""/>
-<Ethnicity_Race spans="1891~1897" text="colour" id="Et6" comment=""/>
-<Financial_Resource spans="1933~1944" text="high-income" id="F5" comment=""/>
-<Ethnicity_Race spans="1945~1950" text="white" id="Et7" comment=""/>
-<Financial_Resource spans="1959~1969" text="low-income" id="F6" comment=""/>
-<Ethnicity_Race spans="1970~1975" text="black" id="Et8" comment=""/>
-<Ethnicity_Race spans="2105~2118" text="racial/ethnic" id="Et9" comment=""/>
+<SocialAdversity spans="1686~1734" text="self-reported exposure to racial  discrimination" id="So0" comment=""/>
+<FinancialResource spans="1831~1842" text="high-income" id="F3" comment=""/>
+<EthnicityRace spans="1843~1848" text="white" id="Et5" comment=""/>
+<FinancialResource spans="1866~1876" text="low-income" id="F4" comment=""/>
+<EthnicityRace spans="1891~1897" text="colour" id="Et6" comment=""/>
+<FinancialResource spans="1933~1944" text="high-income" id="F5" comment=""/>
+<EthnicityRace spans="1945~1950" text="white" id="Et7" comment=""/>
+<FinancialResource spans="1959~1969" text="low-income" id="F6" comment=""/>
+<EthnicityRace spans="1970~1975" text="black" id="Et8" comment=""/>
+<EthnicityRace spans="2105~2118" text="racial/ethnic" id="Et9" comment=""/>
 </TAGS>
 <META/>
 </CVD_SDOH_updated>
