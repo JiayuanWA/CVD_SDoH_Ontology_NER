@@ -18,27 +18,34 @@ DOI: 10.1136/jech-2015-205728 PMCID: PMC4878399 PMID: 26136082 [Indexed for MEDL
 Conflict of interest statement: Competing interests None declared.]]>
 ]]></TEXT>
 <TAGS>
-<Outcome spans="248~268" text="risk of hypertension" id="O0" comment=""/>
-<Outcome spans="248~268" text="risk of hypertension" id="O1" comment=""/>
-<Ethnicity_Race spans="222~236" text="race/ethnicity" id="ER0" comment=""/>
-<Ethnicity_Race spans="1004~1017" text="racial/ethnic" id="ER1" comment=""/>
-<Ethnicity_Race spans="1213~1238" text="racial/ethnic composition" id="ER2" comment=""/>
-<Ethnicity_Race spans="1460~1465" text="white" id="ER3" comment=""/>
-<Ethnicity_Race spans="1480~1485" text="black" id="ER4" comment=""/>
-<Ethnicity_Race spans="222~236" text="race/ethnicity" id="ER5" comment=""/>
-<Ethnicity_Race spans="1887~1906" text="residents of colour" id="ER6" comment=""/>
-<Ethnicity_Race spans="1480~1485" text="black" id="ER7" comment=""/>
-<Age spans="1623~1626" text="age" id="A0" comment=""/>
-<Gender spans="1628~1634" text="gender" id="G0" comment=""/>
-<Tobacco_Use spans="1636~1643" text="smoking" id="TU0" comment=""/>
-<Financial_Resource_Strain spans="211~217" text="income" id="FRS0" comment=""/>
-<Education spans="1681~1690" text="education" id="E0" comment=""/>
-<Financial_Resource_Strain spans="211~217" text="income" id="FRS1" comment=""/>
-<Financial_Resource_Strain spans="1840~1851" text="high-income" id="FRS2" comment=""/>
-<Financial_Resource_Strain spans="1875~1885" text="low-income" id="FRS3" comment=""/>
-<Financial_Resource_Strain spans="1840~1851" text="high-income" id="FRS4" comment=""/>
-<Financial_Resource_Strain spans="1875~1885" text="low-income" id="FRS5" comment=""/>
-<Origin spans="1347~1371" text="Boston metropolitan area" id="O0" comment=""/>
+<-_**Age** spans="732~738" text="adults" id="-*0" comment=""/>
+<-_**Origin** spans="1000~1023" text="Boston metropolitan area" id="-*0" comment=""/>
+<-_**Ethnicity_Race** spans="715~732" text="multiracial/ethnic" id="-*R0" comment=""/>
+<-_**Ethnicity_Race** spans="1125~1130" text="white" id="-*R1" comment=""/>
+<-_**Ethnicity_Race** spans="1143~1148" text="black" id="-*R2" comment=""/>
+<-_**Ethnicity_Race** spans="1190~1204" text="race/ethnicity" id="-*R3" comment=""/>
+<-_**Ethnicity_Race** spans="1320~1338" text="residents of colour" id="-*R4" comment=""/>
+<-_**Ethnicity_Race** spans="1365~1370" text="black" id="-*R5" comment=""/>
+<-_**Gender** spans="1206~1212" text="gender" id="-*0" comment=""/>
+<Tobacco_Use spans="1121~1128" text="smoking" id="TU0" comment=""/>
+<Financial_Resource spans="303~309" text="income" id="FR0" comment=""/>
+<Financial_Resource spans="470~479" text="privation" id="FR1" comment=""/>
+<Financial_Resource spans="732~738" text="income" id="FR2" comment=""/>
+<Financial_Resource spans="1265~1280" text="household income" id="FR3" comment=""/>
+<Financial_Resource spans="1395~1405" text="high-income" id="FR4" comment=""/>
+<Financial_Resource spans="1424~1433" text="low-income" id="FR5" comment=""/>
+<Financial_Resource spans="1460~1470" text="high-income" id="FR6" comment=""/>
+<Financial_Resource spans="1489~1498" text="low-income" id="FR7" comment=""/>
+<Ethnicity_Race spans="740~745" text="white" id="ER0" comment=""/>
+<Ethnicity_Race spans="760~765" text="black" id="ER1" comment=""/>
+<Ethnicity_Race spans="1270~1284" text="race/ethnicity" id="ER2" comment=""/>
+<Ethnicity_Race spans="1434~1453" text="residents of colour" id="ER3" comment=""/>
+<Ethnicity_Race spans="1471~1476" text="white" id="ER4" comment=""/>
+<Ethnicity_Race spans="1499~1504" text="black" id="ER5" comment=""/>
+<Employment spans="654~667" text="working-class" id="E0" comment=""/>
+<-_Social_Adversity spans="1220~1239" text="racial discrimination" id="-SA0" comment=""/>
+<-_Education spans="1210~1219" text="education" id="-E0" comment=""/>
+<-_Safety_&_Environmental_Exposure spans="303~336" text="Department of Environmental Health" id="-S&EE0" comment=""/>
 </TAGS>
 <META/>
 </CVD_SDOH>
