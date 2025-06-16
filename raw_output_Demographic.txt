@@ -1,8 +1,0 @@
-Age: "middle-aged"
-Age: "aged 50 or 60 years"
-Origin: "Danes"
-Origin: "Danish"
-Origin: "Denmark"
-Gender: "males"
-Gender: "females"
-Gender: "gender"

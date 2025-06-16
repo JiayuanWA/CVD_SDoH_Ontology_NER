@@ -1,1 +1,0 @@
-Tobacco_Use: "smoking", Start: 1000, End: 1007

@@ -1,2 +1,0 @@
-Living_Status: "co-habiting status", Start: 646, End: 663
-Education: "grade of  education", Start: 566, End: 584
