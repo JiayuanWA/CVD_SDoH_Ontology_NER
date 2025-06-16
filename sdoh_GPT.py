@@ -366,7 +366,7 @@ if text:
         if result:
             with open(overall_output_path, "a", encoding="utf-8") as f:
                 f.write(f"\n--- Batch: {batch_name} ---\n{result}\n")
-            print(f"✔️ Added batch output to: {overall_output_path}")
+            print(f"Added batch output to: {overall_output_path}")
 
             all_raw_outputs.append(result)
 

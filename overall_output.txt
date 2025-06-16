@@ -1,19 +1,27 @@
 
 --- Batch: Demographic ---
-Age: "younger than the age of 70 years"
-Origin: "low- and middle-income countries"
-Origin: "the developing world"
+Age: "58-year-old"
+Gender: "male"
+Marital_Status: "Lives with wife"
 
 --- Batch: Substance Use ---
-There are no relevant matches for the specified categories in the provided text.
+Alcohol_Use: "Drinks alcohol occasionally (1–2 beers/week)"
+Tobacco_Use: "Non-smoker"
+Illicit_Drug_Use: "Denies illicit drug use"
 
 --- Batch: Psychosocial + Lifestyle ---
-Stress: "environmental conditions", Start: 496, End: 518
+Stress: "increased stress", Start: 573, End: 588
+Physical_Activity: "skipped exercise", Start: 593, End: 608
+Nutrition_and_Diet: "dietary adherence", Start: 2760, End: 2777
+Physical_Activity: "increased physical activity", Start: 2788, End: 2814
+Physical_Activity: "regular physical activity (e.g., 30 mins walk daily, 5x/week)", Start: 3125, End: 3181
+Treatment_Adherence: "Reinforce dietary adherence", Start: 2750, End: 2773
+Treatment_Adherence: "Continue home glucose monitoring; patient instructed to log values", Start: 3188, End: 3248
 
 --- Batch: Economic Stability + Access ---
-Financial_Resource: "low- and middle-income countries"
-Financial_Resource: "economic factors"
+Employment: "Works full time as an accountant"
 
 --- Batch: Community + Built Environment ---
-Social_Adversity: "vulnerable populations"
-Safety_and_Environmental: "environmental conditions"
+Living_Status: "Lives with wife, independent in ADLs"
+Social_Connections: "Lives with wife"
+Social_Connections: "Works full time as an accountant"

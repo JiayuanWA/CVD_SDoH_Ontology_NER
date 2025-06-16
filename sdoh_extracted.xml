@@ -1,26 +1,324 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <CVD_SDOH>
 <TEXT><![CDATA[
-592. Can J Cardiol. 2015 Sep;31(9):1081-93. doi: 10.1016/j.cjca.2015.06.035. Epub  2015 Jul 13.
+S: Subjective
+Chief Complaint:
+ “I’ve been feeling more tingling in my feet and my blood sugars have been higher than usual.”
+History of Present Illness:
+ Mr. John Doe is a 58-year-old male with a known history of Type 2 Diabetes Mellitus (T2DM), Hypertension, and Hyperlipidemia who presents for routine follow-up. Over the past month, he has noticed increased numbness and tingling in both feet, worse at night. The symptoms are bilateral, non-radiating, and described as “pins and needles.” He denies any new trauma, redness, or ulcers. He has also observed fasting blood glucose levels between 160-190 mg/dL and post-prandial readings occasionally exceeding 220 mg/dL, which is a change from his prior average of 130–150 mg/dL fasting. He has not changed his medication or diet significantly. He admits to some recent increased stress and skipped exercise due to workload.
+He denies vision changes, shortness of breath, chest pain, orthopnea, paroxysmal nocturnal dyspnea, palpitations, dizziness, or syncope. No abdominal pain, diarrhea, or constipation. No hematuria or dysuria. No recent infections or fevers.
+Medications:
+Metformin 1000 mg BID
 
-A Global Perspective on Cardiovascular Disease in Vulnerable Populations.
 
-Yeates K(1), Lohfeld L(2), Sleeth J(3), Morales F(4), Rajkotia Y(5), Ogedegbe  O(6).
+Lisinopril 20 mg daily
 
-Author information: (1)Department of Medicine, Queen's University, Kingston, Ontario, Canada.  Electronic address: yeatesk@queensu.ca. (2)McMaster University, Department of Clinical Epidemiology and Biostatistics,  Hamilton, Ontario, Canada. (3)Office of Global Health, Faculty of Health Sciences, Queen's University,  Kingston, Ontario, Canada. (4)ICAP at Columbia University, Mailman School of Public Health, New York, New  York. (5)Thinkwell.global, Maputo, Mozambique. (6)Division of Health an Behavior, Center for Healthful Behavior Change, College  of Global Public Health, Center for Healthful Behavior Change, New York  University, Langone Medical Center, New York, New York.
 
-Cardiovascular disease (CVD) is a major contributor to the growing public health  epidemic in chronic diseases. Much of the disease and disability burden from  CVDs are in people younger than the age of 70 years in low- and middle-income  countries, formerly "the developing world." The risk of CVD is heavily  influenced by environmental conditions and lifestyle variables. In this article  we review the scope of the CVD problem in low- and middle-income countries,  including economic factors, risk factors, at-risk groups, and explanatory  frameworks that hypothesize the multifactorial drivers. Finally, we discuss  current and potential interventions to reduce the burden of CVD in vulnerable  populations including research needed to evaluate and implement promising  solutions for those most at risk.
+Atorvastatin 40 mg nightly
 
-Copyright © 2015 Canadian Cardiovascular Society. Published by Elsevier Inc. All  rights reserved.
 
-DOI: 10.1016/j.cjca.2015.06.035 PMCID: PMC4787293 PMID: 26321432 [Indexed for MEDLINE]
+Aspirin 81 mg daily
+
+
+Allergies:
+ No known drug allergies (NKDA)
+Past Medical History:
+Type 2 Diabetes Mellitus, diagnosed 2014
+
+
+Hypertension
+
+
+Hyperlipidemia
+
+
+Obesity (BMI 31.2)
+
+
+Past Surgical History:
+Appendectomy, 1990
+
+
+No recent surgeries
+
+
+Family History:
+Father: T2DM, deceased from MI at age 68
+
+
+Mother: Hypertension, alive, age 82
+
+
+No family history of cancer
+
+
+Social History:
+Non-smoker
+
+
+Drinks alcohol occasionally (1–2 beers/week)
+
+
+Denies illicit drug use
+
+
+Works full time as an accountant
+
+
+Lives with wife, independent in ADLs
+
+
+Review of Systems:
+General: No weight change, no fever, no chills
+
+
+Neurological: Reports tingling in both feet; no weakness, no falls
+
+
+Cardiovascular: Denies chest pain, palpitations
+
+
+Pulmonary: No shortness of breath or cough
+
+
+GI: No abdominal pain, nausea, or vomiting
+
+
+GU: No dysuria or hematuria
+
+
+Skin: No rash or wounds noted
+
+
+Musculoskeletal: No joint pain or swelling
+
+
+
+O: Objective
+Vital Signs:
+BP: 138/82 mmHg
+
+
+HR: 78 bpm
+
+
+RR: 16/min
+
+
+Temp: 98.6 °F
+
+
+SpO₂: 98% on room air
+
+
+Weight: 198 lbs
+
+
+Height: 5’9”
+
+
+BMI: 31.2 (Obese)
+
+
+Physical Exam:
+General: Alert and oriented, NAD
+
+
+HEENT: PERRLA, EOMI, no oral lesions
+
+
+Neck: No lymphadenopathy, thyroid non-enlarged
+
+
+Cardiac: RRR, no murmurs, rubs, or gallops
+
+
+Lungs: Clear to auscultation bilaterally
+
+
+Abdomen: Soft, nontender, no organomegaly
+
+
+Extremities: No edema, pulses 2+ bilaterally
+
+
+Neuro:
+
+
+CN II-XII grossly intact
+
+
+Decreased pinprick sensation in bilateral feet up to ankles
+
+
+Reflexes diminished at Achilles, normal at patella
+
+
+No tremor or muscle atrophy
+
+
+Skin: Intact, no ulcers, no erythema
+
+
+Labs: (Most recent labs from 1 week ago)
+HbA1c: 8.3% ↑ (previous: 7.1% six months ago)
+
+
+Fasting glucose: 174 mg/dL
+
+
+LDL: 96 mg/dL
+
+
+HDL: 42 mg/dL
+
+
+Triglycerides: 180 mg/dL
+
+
+Creatinine: 1.0 mg/dL
+
+
+eGFR: >60
+
+
+Urine microalbumin: 32 mg/g
+
+
+
+A: Assessment
+Type 2 Diabetes Mellitus – Poorly controlled
+
+
+HbA1c increased from 7.1% to 8.3% in 6 months
+
+
+Home glucose readings elevated
+
+
+Likely contributing factors: decreased physical activity, stress, possible early neuropathy
+
+
+No evidence of nephropathy or retinopathy at this visit
+
+
+Peripheral Neuropathy – Likely diabetic origin
+
+
+Progressive bilateral tingling and decreased sensation in feet
+
+
+No evidence of ulcers or active infection
+
+
+Consistent with length-dependent sensory neuropathy
+
+
+Hypertension – Controlled
+
+
+BP today 138/82 mmHg
+
+
+No reported symptoms, continues Lisinopril
+
+
+Hyperlipidemia – Borderline LDL, lifestyle reinforcement needed
+
+
+LDL improved with statin, but TG slightly elevated
+
+
+Reinforce dietary adherence and follow-up labs in 6 months
+
+
+Obesity – Stable, but no weight loss
+
+
+BMI remains >30
+
+
+Encourage increased physical activity and dietary adherence
+
+
+
+P: Plan
+For Diabetes:
+Add GLP-1 receptor agonist (e.g., semaglutide) starting at 0.25 mg weekly to help with glycemic control and weight management
+
+
+Continue Metformin 1000 mg BID
+
+
+Reinforce dietary counseling: refer to dietitian for 1:1 session
+
+
+Encourage return to regular physical activity (e.g., 30 mins walk daily, 5x/week)
+
+
+Recheck HbA1c in 3 months
+
+
+Continue home glucose monitoring; patient instructed to log values
+
+
+For Neuropathy:
+Start Gabapentin 100 mg TID, titrate as needed
+
+
+Monitor for side effects: dizziness, somnolence
+
+
+Foot care education provided: inspect daily, avoid walking barefoot, report any ulcers or cuts
+
+
+Schedule diabetic foot exam every 6 months
+
+
+For Hypertension and Hyperlipidemia:
+Continue current regimen (Lisinopril, Atorvastatin)
+
+
+No changes today
+
+
+For Obesity and Lifestyle:
+Reinforce importance of exercise and portion control
+
+
+Provided resources for local diabetes education classes
+
+
+Discussed potential role of weight loss in improving glycemic control and neuropathy symptoms
+
+
+Follow-up:
+3-month follow-up for repeat labs, foot exam, and diabetes reassessment
+
+
+Call sooner if neuropathy symptoms worsen or new signs of infection develop
+
+
+Patient Understanding & Agreement:
+ The patient verbalized understanding of his new medication and lifestyle plan. He is motivated to improve his control and agrees to follow up as scheduled.
+
+
 ]]></TEXT>
 <TAGS>
-<Age spans="1122~1154" text="younger than the age of 70 years" id="A0" comment=""/>
-<Origin spans="1377~1409" text="low- and middle-income countries" id="O0" comment=""/>
-<Origin spans="1203~1223" text="the developing world" id="O1" comment=""/>
-<Stress spans="1268~1292" text="environmental conditions" id="S0" comment=""/>
-<Financial_Resource spans="1422~1438" text="economic factors" id="FR0" comment=""/>
+<Age spans="173~184" text="58-year-old" id="A0" comment=""/>
+<Gender spans="185~189" text="male" id="G0" comment=""/>
+<Marital_Status spans="1721~1736" text="Lives with wife" id="MS0" comment=""/>
+<Alcohol_Use spans="1613~1657" text="Drinks alcohol occasionally (1–2 beers/week)" id="AU0" comment=""/>
+<Tobacco_Use spans="1600~1610" text="Non-smoker" id="TU0" comment=""/>
+<Illicit_Drug_Use spans="1660~1683" text="Denies illicit drug use" id="IDU0" comment=""/>
+<Stress spans="822~838" text="increased stress" id="S0" comment=""/>
+<Physical_Activity spans="843~859" text="skipped exercise" id="PA0" comment=""/>
+<Nutrition_and_Diet spans="3820~3837" text="dietary adherence" id="NaD0" comment=""/>
+<Nutrition_and_Diet spans="3970~3987" text="dietary adherence" id="NaD1" comment=""/>
+<Physical_Activity spans="3938~3965" text="increased physical activity" id="PA1" comment=""/>
+<Physical_Activity spans="4261~4322" text="regular physical activity (e.g., 30 mins walk daily, 5x/week)" id="PA2" comment=""/>
+<Treatment_Adherence spans="4353~4419" text="Continue home glucose monitoring; patient instructed to log values" id="TA0" comment=""/>
+<Employment spans="1686~1718" text="Works full time as an accountant" id="E0" comment=""/>
 </TAGS>
 <META/>
 </CVD_SDOH>
