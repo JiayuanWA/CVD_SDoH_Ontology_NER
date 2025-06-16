@@ -1,71 +1,38 @@
-# **SDoH Extraction with Ollama and NLTK**
+# **SDoH Extraction with OpenAI GPT and NLTK**
 
-This script extracts Social Determinants of Health (SDoH) phrases from a given text file.
+This script extracts Social Determinants of Health (SDoH) phrases from clinical or narrative text using OpenAI GPT and rule-based evaluation.
+
+---
 
 ## **Prerequisites**
-Before running the script, ensure you have the following installed:
 
 ### **1. Install Python**
-This script requires Python 3.8+. Check version :
+This script requires Python 3.8+. Check your version using:
 
 ```sh
 python --version
 ```
 
 ### **2. Install Required Dependencies**
-Run the following command to install the necessary Python libraries:
+Run the following command to install all required libraries:
 
 ```sh
-pip install ollama nltk
+pip install openai nltk
 ```
-
----
-
-## **Setup Instructions**
-
-### **Step 1: Install and Set Up Ollama**
-Ollama provides local execution for large language models.
-
-1. **Download and Install Ollama**  
-   Follow the instructions for your operating system at [Ollama’s website](https://ollama.ai).
-
-2. **Pull the Required Model**  
-   This script supports multiple models. You can use either `deepseek-r1` or `llama3`. Pull the desired model using:
-
-   ```sh
-   ollama pull deepseek-r1
-   ```
-
-   or
-
-   ```sh
-   ollama pull llama3
-   ```
-
-
-
 
 ---
 
 ## **How to Run the Script**
 
-### **Step 1: Prepare the Input File**
-Ensure you have a text file (`sdoh_text.txt`) in the same directory as the script. This file should contain the text from which you want to extract SDoH phrases.
+### **Step 1: Prepare Your Input Files**
+Ensure you have the following files in the same directory:
+
+- `sdoh_text.txt` – your source text
+- `examples_xml/` – few-shot XML examples for in-context prompting
+- `gold_sdoh.xml` – gold standard annotations (optional, for evaluation)
 
 ### **Step 2: Run the Script**
-Execute the script with the desired model using:
-
-```sh
-python sdoh_ner.py
-```
-
-or
-
-```sh
-python sdoh_llama.py
-```
-
-Alternatively, for OpenAI API-based extraction, use:
+Execute the extraction script using:
 
 ```sh
 python sdoh_GPT.py
@@ -73,37 +40,54 @@ python sdoh_GPT.py
 
 ---
 
-## **How the Script Works**
-1. **Reads the Input File:**  
-   - Loads `sdoh_text.txt`  
-   - If the file is missing, it throws an error.
+## **Methodology**
 
-2. **Splits Text into Chunks:**  
-   - Uses `nltk.sent_tokenize` to split text into **sentence-based chunks** (max **2000 tokens per chunk**).
+This pipeline performs SDoH phrase extraction and evaluation in five main stages:
 
-3. **Runs the Ollama LLM Extraction Model:**  
-   - **Prompts the model** to extract SDoH phrases **directly from text** (without paraphrasing).  
-   - **Filters results** to only show categories with matching text.
+### 1. **Batch-Based Prompting**
+- Categories are grouped into 5 batches:
+  - **Demographic**
+  - **Substance Use**
+  - **Psychosocial + Lifestyle**
+  - **Economic Stability + Access**
+  - **Community + Built Environment**
+- Each batch contains 4–10 related SDoH categories to avoid overwhelming the prompt.
 
-4. **Saves the Extracted Phrases:**  
-   - Outputs **structured results** in a file: `sdoh_llm_raw_responses.txt`.
+### 2. **Few-Shot Prompt Construction**
+- XML files in the `examples_xml/` folder are parsed to generate input-output demonstrations.
+- These are prepended to GPT prompts for better accuracy.
+
+### 3. **GPT Response Parsing (`parse_response`)**
+- GPT is prompted batch-by-batch to extract phrases for relevant SDoH categories. To maximize precision of span matching, each extracted phrase is first deduplicated — only unique phrases per category are retained in the first pass.
+
+### 4. **Span Parsing and Matching, XML Generation**
+- In the parse_response() function:
+  - Each phrase is matched against all possible spans in the full text.
+  - The best non-overlapping span is selected per phrase, ensuring accurate start/end offsets.
+  - Although deduplication occurs initially, all distinct occurrences of the phrase are matched later to ensure no information is lost.
+  - Extracted results are formatted as XML with span positions, phrase text, and unique tag IDs.
+
+### 5. **Evaluation (Exact and Partial Matching)**
+- Predictions are compared to gold-standard annotations using:
+  - **Exact match** = same span and category
+  - **Partial match** = overlapping span and correct category
+  - **Wrong type** = span overlaps, category incorrect
+  - **False positive** = predicted but not in gold
+  - **False negative** = gold tag missed entirely
+
+Metrics include precision, recall, and F1 score, both strictly (exact match) and relaxed (including partial).
 
 ---
-## **Expected Output Format**
 
-The output will look like:
+## **Expected Output Formats**
 
-```json
-{
-  "Age": "47 years old",
-  "Gender": "male",
-  "Employment": "Works as a delivery driver",
-  "Financial Strain": "Struggling to pay rent",
-  "Housing Stability": "Facing eviction"
-}
-```
+### **1. Raw GPT Response**
+Appended to: `overall_output.txt`
 
-For XML format:
+### **2. Structured XML Output**
+Saved to: `sdoh_extracted.xml`
+
+Example:
 
 ```xml
 <Age spans="25~37" text="47 years old" id="A0" comment=""/>
@@ -115,56 +99,52 @@ For XML format:
 
 | File Name              | Purpose                                                                 |
 |------------------------|-------------------------------------------------------------------------|
-| `sdoh_text.txt`        | Input text for SDoH extraction.                                         |
-| `examples_xml/`        | Folder containing XML examples for few-shot prompting.                 |
-| `sdoh_extracted.xml`   | Output XML with extracted entities and spans.                          |
-| `gold_sdoh.xml`        | Gold standard annotation used for evaluation.                          |
+| `sdoh_text.txt`        | Input text for SDoH extraction                                          |
+| `examples_xml/`        | XML-formatted few-shot prompts                                          |
+| `sdoh_extracted.xml`   | Output file with predicted tags and spans                               |
+| `gold_sdoh.xml`        | Gold standard annotations for evaluation                                |
 
 ---
 
-## **Evaluation **
+## **Evaluation Details**
 
-After extraction, the script compares GPT's output with a gold standard (`gold_sdoh.xml`) using character-level span matching and category labels.
+The script evaluates GPT predictions against gold annotations using character spans and type labels.
 
 ### Matching Rules
 
-Each predicted phrase is matched against gold standard phrases:
-
-- **True Positive (Exact Match):**  
-  Phrase matches exactly **and** category is correct.
-
-- **Wrong Type:**  
-  Phrase matches, but the category is incorrect.
-
-- **Partial Match:**  
-  Phrase overlaps but is not an exact match.
-  Either the model got part of the phrase, or included too much, but the category may or may not be correct.
-
-- **False Positive:**  
-  Model predicted a phrase that doesn’t exist in the gold file.
-
-- **False Negative:**  
-  Model missed a phrase that exists in the gold file.
+- **True Positive (Exact):** Span + Category match
+- **Partial Match:** Overlapping span with correct category
+- **Wrong Type:** Span overlaps but wrong category
+- **False Positive:** Prediction not found in gold
+- **False Negative:** Gold tag missing from predictions
 
 ### Metrics Reported
 
-- **Precision:** What % of model predictions were correct? True Positives / (True Positives + False Positives)
-- **Recall:** What % of gold annotations did the model find? True Positives / (True Positives + False Negatives)
-- **F1 Score:** Balance between precision and recall. 2 * (Precision * Recall) / (Precision + Recall)
-- **Per-category breakdown:** Accuracy for each SDoH type.
+- **Precision:**  
+  `TP / (TP + FP)`
+- **Recall:**  
+  `TP / (TP + FN)`
+- **F1 Score:**  
+  `2 * (Precision * Recall) / (Precision + Recall)`
+- **Per-category Breakdown:**  
+  Separate metrics for each SDoH class (exact + partial)
 
 ### Sample Output
 
 ```
---- Evaluation (Strict Exact Match) ---
-True Positives:       12
-Partial Matches:       3
-Wrong Category:        1
-False Positives:       2
-False Negatives:       4
-Precision:          0.750
-Recall:             0.600
-F1 Score:           0.667
+--- Evaluation (Strict Exact Match Only) ---
+True Positives (exact span + correct type):      12
+Type Mismatch (span matched, wrong type):         1
+False Positives (no overlap with gold):           2
+False Negatives (gold missed entirely):           4
+Precision (exact only):                           0.750
+Recall (exact only):                              0.600
+F1 Score (exact only):                            0.667
+
+--- Evaluation (Relaxed: Exact + Partial Match) ---
+True Positives (exact + partial span + correct type): 15
+Partial Matches (span overlap + correct type):         3
+Precision (combined):                                0.833
+Recall (combined):                                   0.750
+F1 Score (combined):                                 0.789
 ```
-
-
