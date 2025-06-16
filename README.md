@@ -2,6 +2,13 @@
 
 This script extracts Social Determinants of Health (SDoH) phrases from clinical or narrative text using OpenAI GPT and rule-based evaluation.
 
+This script uses the OpenAI API to call GPT models. Before running the script, replace the placeholder key in the code:
+
+```python
+API_KEY = "sk-REPLACE_WITH_YOUR_KEY"
+client = openai.OpenAI(api_key=API_KEY)
+```
+
 ---
 
 ## **Prerequisites**
