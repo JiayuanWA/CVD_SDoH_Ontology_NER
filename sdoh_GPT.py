@@ -84,7 +84,7 @@ def read_text_file(path):
     with open(path, "r", encoding="utf-8") as file:
         return file.read()
 
-def load_few_shot_examples(folder_path, max_examples=2):
+def load_few_shot_examples(folder_path, max_examples=6):
     examples = []
     files = [f for f in os.listdir(folder_path) if f.endswith(".xml")][:max_examples]
     for file in files:
@@ -137,8 +137,7 @@ def parse_response(raw_text, full_text):
             print(f"Skipping unknown category: {category}")
             continue
 
-
-        seen_tags = set()  # ← NEW: track unique (category, phrase, start, end)
+        seen_tags = set()
 
         # Process all extracted phrases under that category
         for phrase in phrases:
@@ -150,13 +149,12 @@ def parse_response(raw_text, full_text):
                 start, end = m.start(), m.end()
                 candidate_spans.append((start, end))
 
-            # Sort by descending span length
             candidate_spans.sort(key=lambda x: x[1] - x[0], reverse=True)
 
             # Filter out overlapping matches
             for start, end in candidate_spans:
                 if any(not (end <= s or start >= e) for (s, e) in used_spans):
-                    continue  # overlaps with existing
+                    continue 
 
                 tag_key = (category, phrase_clean, start, end)
                 if tag_key in seen_tags:
@@ -171,10 +169,7 @@ def parse_response(raw_text, full_text):
                     "start": start,
                     "end": end
                 })
-
     return results
-
-
 
 
 def generate_xml(text, extractions):
@@ -194,7 +189,6 @@ def generate_xml(text, extractions):
     xml_content += "<TAGS>\n" + "\n".join(tag_lines) + "\n</TAGS>\n"
     xml_content += "<META/>\n</CVD_SDOH>"
     return xml_content
-
 
 
 def spans_overlap(pred_start, pred_end, gold_start, gold_end):
@@ -233,26 +227,26 @@ def evaluate_against_gold(gold_path, predictions):
             gold_cat = gold["category"]
             gold_text = gold["phrase"]
 
-            # ✅ Exact match
+            # Exact match
             if pred_span == gold_span and pred_cat == gold_cat:
                 matched_exact += 1
                 matched_ids.add(i)
                 matched = True
                 type_counts_exact[pred_cat]["TP"] += 1
                 type_counts_combined[pred_cat]["TP"] += 1
-                print(f"✅ EXACT MATCH | Category: {pred_cat} | Text: \"{pred_text}\"")
+                print(f"EXACT MATCH | Category: {pred_cat} | Text: \"{pred_text}\"")
                 break
 
-            # 🟡 Partial match
+            # Partial match
             elif spans_overlap(*pred_span, *gold_span) and pred_cat == gold_cat:
                 matched_partial += 1
                 matched_ids.add(i)
                 matched = True
                 type_counts_combined[pred_cat]["TP"] += 1
-                print(f"🟡 PARTIAL MATCH | Category: {pred_cat} | Pred: \"{pred_text}\" vs Gold: \"{gold_text}\"")
+                print(f"PARTIAL MATCH | Category: {pred_cat} | Pred: \"{pred_text}\" vs Gold: \"{gold_text}\"")
                 break
 
-            # ⚠️ Wrong category
+            # Wrong category
             elif spans_overlap(*pred_span, *gold_span) and pred_cat != gold_cat:
                 matched_wrong_type += 1
                 matched_ids.add(i)
@@ -261,20 +255,20 @@ def evaluate_against_gold(gold_path, predictions):
                 type_counts_exact[gold_cat]["FN"] += 1
                 type_counts_combined[pred_cat]["FP"] += 1
                 type_counts_combined[gold_cat]["FN"] += 1
-                print(f"⚠️  WRONG TYPE | Pred: ({pred_cat}) \"{pred_text}\" vs Gold: ({gold_cat}) \"{gold_text}\"")
+                print(f"WRONG TYPE | Pred: ({pred_cat}) \"{pred_text}\" vs Gold: ({gold_cat}) \"{gold_text}\"")
                 break
 
         if not matched:
             false_positives.append(pred)
             type_counts_exact[pred_cat]["FP"] += 1
             type_counts_combined[pred_cat]["FP"] += 1
-            print(f"❌ NO MATCH     | Category: {pred_cat} | Text: \"{pred_text}\"")
+            print(f"NO MATCH     | Category: {pred_cat} | Text: \"{pred_text}\"")
 
     false_negatives = [gold for i, gold in enumerate(gold_tags) if i not in matched_ids]
     for fn in false_negatives:
         type_counts_exact[fn["category"]]["FN"] += 1
         type_counts_combined[fn["category"]]["FN"] += 1
-        print(f"🔴 MISSED GOLD | Category: {fn['category']} | Text: \"{fn['phrase']}\"")
+        print(f"MISSED GOLD | Category: {fn['category']} | Text: \"{fn['phrase']}\"")
 
     # --- Overall scores ---
     precision_exact = matched_exact / len(predictions) if predictions else 0
@@ -384,7 +378,7 @@ all_extractions = parse_response(combined_output, text)
 xml_output = generate_xml(text, all_extractions)
 with open(output_file, "w", encoding="utf-8") as f:
     f.write(xml_output)
-print(f"\n✅ Extraction complete. XML saved to: {output_file}")
+print(f"\nExtraction complete. XML saved to: {output_file}")
 
 # Run evaluation
 evaluate_against_gold(gold_path, all_extractions)
