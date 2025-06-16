@@ -1,0 +1,19 @@
+
+--- Batch: Demographic ---
+Age: "younger than the age of 70 years"
+Origin: "low- and middle-income countries"
+Origin: "the developing world"
+
+--- Batch: Substance Use ---
+There are no relevant matches for the specified categories in the provided text.
+
+--- Batch: Psychosocial + Lifestyle ---
+Stress: "environmental conditions", Start: 496, End: 518
+
+--- Batch: Economic Stability + Access ---
+Financial_Resource: "low- and middle-income countries"
+Financial_Resource: "economic factors"
+
+--- Batch: Community + Built Environment ---
+Social_Adversity: "vulnerable populations"
+Safety_and_Environmental: "environmental conditions"

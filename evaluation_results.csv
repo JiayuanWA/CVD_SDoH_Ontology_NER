@@ -1,0 +1,22 @@
+--- Evaluation (Strict Exact Match) ---
+Metric,Value
+True Positives (exact match + type),0
+Partial Matches (substring overlap),3
+Wrong Category Matches (text ok),0
+False Positives (no match),8
+False Negatives (gold not matched),25
+Precision (exact only),0.000
+Recall (exact only),0.000
+F1 Score (exact only),0.000
+
+--- Per-Class Breakdown (exact matches only) ---
+Tag,Precision,Recall,F1,TP,FP,FN
+Origin,0.00,0.00,0.00,0,6,2
+Social Adversity,0.00,0.00,0.00,0,1,1
+Education,0.00,0.00,0.00,0,1,0
+FinancialResource,0.00,0.00,0.00,0,0,7
+EthnicityRace,0.00,0.00,0.00,0,0,11
+Employment,0.00,0.00,0.00,0,0,1
+Age,0.00,0.00,0.00,0,0,1
+Gender,0.00,0.00,0.00,0,0,1
+Tobacco Use,0.00,0.00,0.00,0,0,1

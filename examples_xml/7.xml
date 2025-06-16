@@ -12,22 +12,22 @@ BACKGROUND: Research has shown network social capital associated with a range of
 
 DOI: 10.1136/jech-2013-202996 PMCID: PMC3932759 PMID: 24258198 [Indexed for MEDLINE]]]></TEXT>
 <TAGS>
-<Financial_Resource spans="120~134" text="social capital" id="F0" comment=""/>
-<Financial_Resource spans="325~339" text="social capital" id="F1" comment=""/>
-<Financial_Resource spans="429~443" text="social capital" id="F2" comment=""/>
-<Financial_Resource spans="690~705" text="social  capital" id="F3" comment=""/>
-<Financial_Resource spans="800~814" text="social capital" id="F4" comment=""/>
+<FinancialResource spans="120~134" text="social capital" id="F0" comment=""/>
+<FinancialResource spans="325~339" text="social capital" id="F1" comment=""/>
+<FinancialResource spans="429~443" text="social capital" id="F2" comment=""/>
+<FinancialResource spans="690~705" text="social  capital" id="F3" comment=""/>
+<FinancialResource spans="800~814" text="social capital" id="F4" comment=""/>
 <Origin spans="566~574" text="Montreal" id="O0" comment=""/>
-<Financial_Resource spans="913~926" text="socioeconomic" id="F5" comment=""/>
+<FinancialResource spans="913~926" text="socioeconomic" id="F5" comment=""/>
 <Education spans="1092~1121" text="higher educational attainment" id="Ed0" comment=""/>
-<Financial_Resource spans="1167~1181" text="social capital" id="F6" comment=""/>
+<FinancialResource spans="1167~1181" text="social capital" id="F6" comment=""/>
 <Social_Connections spans="1275~1292" text="Social  isolation" id="Soc0" comment=""/>
 <Stress spans="1364~1380" text="Sense of control" id="S0" comment=""/>
 <Safety_and_Environment spans="1393~1411" text="perceived cohesion" id="Sa0" comment=""/>
 <Age spans="1445~1448" text="age" id="Ag0" comment=""/>
 <Age spans="1532~1535" text="age" id="Ag1" comment=""/>
-<Financial_Resource spans="1607~1620" text="socioeconomic" id="F8" comment=""/>
-<Financial_Resource spans="1470~1484" text="social capital" id="F9" comment=""/>
+<FinancialResource spans="1607~1620" text="socioeconomic" id="F8" comment=""/>
+<FinancialResource spans="1470~1484" text="social capital" id="F9" comment=""/>
 <Social_Connections spans="1639~1688" text="increase actual and perceived social connectivity" id="Soc1" comment=""/>
 </TAGS>
 <META/>

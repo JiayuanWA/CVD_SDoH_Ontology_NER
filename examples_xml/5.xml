@@ -16,7 +16,7 @@ Conflict of interest statement: Conflicts of Interest: The authors have no  conf
 <TAGS>
 <Safety_and_Environment spans="743~789" text="objective early life built environment ratings" id="Sa0" comment=""/>
 <Education spans="791~826" text="parental  and participant education" id="Ed0" comment=""/>
-<Financial_Resource_Strain spans="832~838" text="income" id="F0" comment=""/>
+<FinancialResource spans="832~838" text="income" id="F0" comment=""/>
 <Age spans="865~880" text="early adulthood" id="Ag0" comment=""/>
 <Gender spans="1010~1015" text="women" id="G0" comment=""/>
 <Alcohol_Use spans="1174~1194" text="alcohol  consumption" id="A0" comment=""/>
@@ -30,7 +30,7 @@ Conflict of interest statement: Conflicts of Interest: The authors have no  conf
 <Gender spans="1321~1324" text="men" id="G3" comment=""/>
 <Gender spans="1370~1375" text="women" id="G4" comment=""/>
 <Tobacco_Use spans="1400~1407" text="smoking" id="T1" comment=""/>
-<Financial_Resource_Strain spans="1421~1427" text="income" id="F1" comment=""/>
+<FinancialResource spans="1421~1427" text="income" id="F1" comment=""/>
 <Education spans="1462~1471" text="education" id="Ed2" comment=""/>
 <Ethnicity_Race spans="1511~1516" text="white" id="Et4" comment=""/>
 <Gender spans="1517~1520" text="men" id="G5" comment=""/>
@@ -42,29 +42,29 @@ Conflict of interest statement: Conflicts of Interest: The authors have no  conf
 <Gender spans="2036~2039" text="men" id="G7" comment=""/>
 <Ethnicity_Race spans="2079~2084" text="white" id="Et8" comment=""/>
 <Gender spans="2085~2090" text="women" id="G8" comment=""/>
-<Financial_Resource_Strain spans="102~115" text="socioeconomic" id="F2" comment=""/>
-<Financial_Resource_Strain spans="464~490" text="socioeconomic status (SES)" id="F3" comment=""/>
-<Financial_Resource_Strain spans="539~542" text="SES" id="F4" comment=""/>
-<Financial_Resource_Strain spans="738~741" text="SES" id="F5" comment=""/>
+<FinancialResource spans="102~115" text="socioeconomic" id="F2" comment=""/>
+<FinancialResource spans="464~490" text="socioeconomic status (SES)" id="F3" comment=""/>
+<FinancialResource spans="539~542" text="SES" id="F4" comment=""/>
+<FinancialResource spans="738~741" text="SES" id="F5" comment=""/>
 <Age spans="962~1002" text="mean age = 29 years, range = 24-32 years" id="Ag1" comment=""/>
 <Ethnicity_Race id="Et9" spans="-1~-1" text="" comment=""/>
 <Ethnicity_Race spans="1023~1028" text="black" id="Et10" comment=""/>
-<Financial_Resource_Strain spans="1115~1118" text="SES" id="F6" comment=""/>
+<FinancialResource spans="1115~1118" text="SES" id="F6" comment=""/>
 <Physical_Activity spans="1138~1153" text="body mass index" id="P0" comment=""/>
 <Nutrition_and_Diet spans="1137~1154" text=" body mass index " id="N0" comment=""/>
 <Physical_Activity spans="1155~1158" text="BMI" id="P1" comment=""/>
 <Nutrition_and_Diet spans="1154~1159" text="(BMI)" id="N1" comment=""/>
 <Physical_Activity spans="1522~1525" text="BMI" id="P2" comment=""/>
-<Financial_Resource_Strain spans="1692~1695" text="SES" id="F7" comment=""/>
-<Financial_Resource_Strain spans="1853~1856" text="SES" id="F8" comment=""/>
+<FinancialResource spans="1692~1695" text="SES" id="F7" comment=""/>
+<FinancialResource spans="1853~1856" text="SES" id="F8" comment=""/>
 <Physical_Activity spans="1996~1999" text="BMI" id="P3" comment=""/>
 <Physical_Activity spans="2050~2053" text="BMI" id="P4" comment=""/>
 <Gender spans="1898~1901" text="sex" id="G9" comment=""/>
-<Financial_Resource_Strain spans="1964~1967" text="SES" id="F9" comment=""/>
-<Financial_Resource_Strain spans="1794~1797" text="SES" id="F10" comment=""/>
+<FinancialResource spans="1964~1967" text="SES" id="F9" comment=""/>
+<FinancialResource spans="1794~1797" text="SES" id="F10" comment=""/>
 <Ethnicity_Race spans="1889~1893" text="race" id="Et11" comment=""/>
 <Physical_Activity spans="1242~1245" text="BMI" id="P5" comment=""/>
-<Financial_Resource_Strain spans="1573~1576" text="SES" id="F11" comment=""/>
+<FinancialResource spans="1573~1576" text="SES" id="F11" comment=""/>
 </TAGS>
 <META/>
 </CVD_SDOH>

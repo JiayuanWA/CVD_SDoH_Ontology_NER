@@ -1,0 +1,2 @@
+Stress: "coping status", Start: 148, End: 160
+Stress: "coping inequalities", Start: 101, End: 119

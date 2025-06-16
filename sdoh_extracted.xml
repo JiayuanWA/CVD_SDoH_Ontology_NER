@@ -1,54 +1,26 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <CVD_SDOH>
 <TEXT><![CDATA[
-<![CDATA[583. J Epidemiol Community Health. 2015 Dec;69(12):1199-207. doi:  10.1136/jech-2015-205728. Epub 2015 Jul 1.
+592. Can J Cardiol. 2015 Sep;31(9):1081-93. doi: 10.1016/j.cjca.2015.06.035. Epub  2015 Jul 13.
 
-Spatial social polarisation: using the Index of Concentration at the Extremes  jointly for income and race/ethnicity to analyse risk of hypertension.
+A Global Perspective on Cardiovascular Disease in Vulnerable Populations.
 
-Feldman JM(1), Waterman PD(1), Coull BA(2), Krieger N(1).
+Yeates K(1), Lohfeld L(2), Sleeth J(3), Morales F(4), Rajkotia Y(5), Ogedegbe  O(6).
 
-Author information: (1)Department of Social and Behavioral Sciences, Harvard T.H. Chan School of  Public Health, Boston, Massachusetts, USA. (2)Department of Environmental Health, Department of Biostatistics, Harvard T.H.  Chan School of Public Health, Boston, Massachusetts, USA.
+Author information: (1)Department of Medicine, Queen's University, Kingston, Ontario, Canada.  Electronic address: yeatesk@queensu.ca. (2)McMaster University, Department of Clinical Epidemiology and Biostatistics,  Hamilton, Ontario, Canada. (3)Office of Global Health, Faculty of Health Sciences, Queen's University,  Kingston, Ontario, Canada. (4)ICAP at Columbia University, Mailman School of Public Health, New York, New  York. (5)Thinkwell.global, Maputo, Mozambique. (6)Division of Health an Behavior, Center for Healthful Behavior Change, College  of Global Public Health, Center for Healthful Behavior Change, New York  University, Langone Medical Center, New York, New York.
 
-BACKGROUND: Growing spatial social and economic polarisation may be an important  societal determinant of health, but only a few studies have used the recently  developed Index of Concentration at the Extremes (ICE) to analyse the impact of  joint concentrations of privilege and privation on health outcomes. We explore  use of the ICE to investigate risk of hypertension in an urban,  multiracial/ethnic, and predominantly working-class study population of US  adults. METHODS: We generated novel ICE measures at the census tract level that jointly  assess extreme concentrations of both income and racial/ethnic composition. We  then linked the ICE measures to data from two observational, cross-sectional  studies conducted in the Boston metropolitan area (2003-2004; 2008-2010;  N=2145). RESULTS: The ICE measure for extreme concentrations of white compared with black  residents was independently associated with lower odds of hypertension (OR=0.76;  95% CI 0.62 to 0.93), controlling for race/ethnicity, age, gender, smoking, body  mass index, household income, education and self-reported exposure to racial  discrimination. Even stronger associations were observed for the ICE measures  that compared concentrations of high-income white residents versus low-income  residents of colour (OR=0.61; 95% CI 0.40 to 0.96) and high-income white versus  low-income black residents (OR=0.48; 95% CI 0.29 to 0.81). CONCLUSIONS: Results suggest public health studies should explore the joint  impact of racial/ethnic and economic spatial polarisation on population health.
+Cardiovascular disease (CVD) is a major contributor to the growing public health  epidemic in chronic diseases. Much of the disease and disability burden from  CVDs are in people younger than the age of 70 years in low- and middle-income  countries, formerly "the developing world." The risk of CVD is heavily  influenced by environmental conditions and lifestyle variables. In this article  we review the scope of the CVD problem in low- and middle-income countries,  including economic factors, risk factors, at-risk groups, and explanatory  frameworks that hypothesize the multifactorial drivers. Finally, we discuss  current and potential interventions to reduce the burden of CVD in vulnerable  populations including research needed to evaluate and implement promising  solutions for those most at risk.
 
-Published by the BMJ Publishing Group Limited. For permission to use (where not  already granted under a licence) please go to  http://www.bmj.com/company/products-services/rights-and-licensing/
+Copyright © 2015 Canadian Cardiovascular Society. Published by Elsevier Inc. All  rights reserved.
 
-DOI: 10.1136/jech-2015-205728 PMCID: PMC4878399 PMID: 26136082 [Indexed for MEDLINE]
-
-Conflict of interest statement: Competing interests None declared.]]>
+DOI: 10.1016/j.cjca.2015.06.035 PMCID: PMC4787293 PMID: 26321432 [Indexed for MEDLINE]
 ]]></TEXT>
 <TAGS>
-<Origin spans="1000~1022" text="Boston metropolitan area" id="O0" comment=""/>
-<EthnicityRace spans="811~828" text="multiracial/ethnic" id="E0" comment=""/>
-<EthnicityRace spans="1160~1165" text="white" id="E1" comment=""/>
-<EthnicityRace spans="1177~1182" text="black" id="E2" comment=""/>
-<EthnicityRace spans="125~140" text="race/ethnicity" id="E3" comment=""/>
-<EthnicityRace spans="1085~1100" text="race/ethnicity" id="E4" comment=""/>
-<EthnicityRace spans="1390~1408" text="residents of colour" id="E5" comment=""/>
-<EthnicityRace spans="1444~1458" text="black residents" id="E6" comment=""/>
-<Gender spans="1118~1124" text="gender" id="G0" comment=""/>
-<Age spans="860~866" text="adults" id="A0" comment=""/>
-<Tobacco_Use spans="1121~1128" text="smoking" id="TU0" comment=""/>
-<Stress spans="1221~1263" text="self-reported exposure to racial discrimination" id="S0" comment=""/>
-<FinancialResource spans="204~210" text="income" id="F0" comment=""/>
-<FinancialResource spans="1010~1016" text="income" id="F1" comment=""/>
-<FinancialResource spans="1255~1265" text="low-income" id="F2" comment=""/>
-<FinancialResource spans="1320~1330" text="low-income" id="F3" comment=""/>
-<FinancialResource spans="1224~1234" text="high-income" id="F4" comment=""/>
-<FinancialResource spans="1289~1299" text="high-income" id="F5" comment=""/>
-<FinancialResource spans="1084~1100" text="household income" id="F6" comment=""/>
-<EthnicityRace spans="211~225" text="race/ethnicity" id="E7" comment=""/>
-<EthnicityRace spans="586~599" text="racial/ethnic" id="E8" comment=""/>
-<EthnicityRace spans="1400~1413" text="racial/ethnic" id="E9" comment=""/>
-<EthnicityRace spans="1185~1190" text="white" id="E10" comment=""/>
-<EthnicityRace spans="1202~1207" text="black" id="E11" comment=""/>
-<EthnicityRace spans="1266~1285" text="residents of colour" id="E12" comment=""/>
-<EthnicityRace spans="1235~1240" text="white" id="E13" comment=""/>
-<EthnicityRace spans="1331~1336" text="black" id="E14" comment=""/>
-<EthnicityRace spans="1060~1074" text="race/ethnicity" id="E15" comment=""/>
-<Social_Adversity spans="1125~1144" text="racial discrimination" id="SA0" comment=""/>
-<Education spans="1105~1114" text="education" id="E0" comment=""/>
-<Safety_and_Environmental_Exposure spans="1105~1144" text="self-reported exposure to racial discrimination" id="SaEE0" comment=""/>
+<Age spans="1122~1154" text="younger than the age of 70 years" id="A0" comment=""/>
+<Origin spans="1377~1409" text="low- and middle-income countries" id="O0" comment=""/>
+<Origin spans="1203~1223" text="the developing world" id="O1" comment=""/>
+<Stress spans="1268~1292" text="environmental conditions" id="S0" comment=""/>
+<Financial_Resource spans="1422~1438" text="economic factors" id="FR0" comment=""/>
 </TAGS>
 <META/>
 </CVD_SDOH>

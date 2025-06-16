@@ -24,8 +24,6 @@ DOI: 10.1016/j.healthplace.2012.12.008 PMCID: PMC3640834 PMID: 23454734 [Indexed
 <Social_Adversity spans="796~814" text="adult risk factors" id="So1" comment=""/>
 <Living_Status spans="1062~1086" text="place of adult residence" id="L0" comment=""/>
 <Financial_Resource_Strain spans="1142~1155" text="childhood SES" id="F0" comment=""/>
-<Education id="Ed0" spans="-1~-1" text="" comment=""/>
-<Education id="Ed1" spans="-1~-1" text="" comment=""/>
 <Education spans="1096~1114" text="paternal education" id="Ed2" comment=""/>
 </TAGS>
 <META/>
