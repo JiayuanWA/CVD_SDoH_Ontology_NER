@@ -127,8 +127,7 @@ def parse_response(raw_text, full_text):
         line = line.strip()
         if ':' not in line:
             continue
-    
-        # Split into category and phrases block
+
         raw_cat, phrases_block = line.split(":", 1)
         phrases = re.findall(r'"(.*?)"', phrases_block)
 
@@ -139,11 +138,9 @@ def parse_response(raw_text, full_text):
 
         seen_tags = set()
 
-        # Process all extracted phrases under that category
         for phrase in phrases:
             phrase_clean = phrase.strip()
             
-            # Collect all potential spans first
             candidate_spans = []
             for m in re.finditer(re.escape(phrase_clean), full_text):
                 start, end = m.start(), m.end()
@@ -158,7 +155,7 @@ def parse_response(raw_text, full_text):
 
                 tag_key = (category, phrase_clean, start, end)
                 if tag_key in seen_tags:
-                    continue  # exact duplicate
+                    continue
 
                 used_spans.add((start, end))
                 seen_tags.add(tag_key)
