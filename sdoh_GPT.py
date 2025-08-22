@@ -11,7 +11,7 @@ import xml.etree.ElementTree as ET
 
 nltk.download("punkt")
 
-API_KEY = "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"
+API_KEY = ""
 
 client = openai.OpenAI(api_key=API_KEY)
 
